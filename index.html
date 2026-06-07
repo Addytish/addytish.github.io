@@ -46,13 +46,13 @@
         </div>
     </section>
 
-    <main id="work" class="mt-12">
-        <h2 class="mono text-xs mb-8 tracking-[0.2em] uppercase" style="color: #e4e4e7">Featured Work</h2>
+    <main id="work" class="mt-8">
+        <h2 class="mono text-xs mb-6 tracking-[0.2em] uppercase" style="color: #e4e4e7">Featured Work</h2>
 
         <!-- Card 1: Williams-Sonoma -->
         <div class="group relative p-8 border border-zinc-800 rounded-2xl bg-zinc-900/30 hover:bg-zinc-900/50 transition-all duration-500 mb-8">
-            <div class="flex flex-col md:flex-row justify-between gap-8">
-                <div class="max-w-xl">
+            <div class="flex flex-col md:flex-row justify-between gap-4">
+                <div class="flex-1">
                     <span class="mono text-xs bg-zinc-800 px-2 py-1 rounded" style="color: #e4e4e7">EXPERIMENTATION · PERSONALIZATION · AI</span>
                     <h3 class="text-3xl font-bold mt-4 mb-4 text-white">Multi-Brand Experimentation & AI Personalization</h3>
                     <p class="leading-relaxed mb-6" style="color: #e4e4e7">
@@ -64,10 +64,10 @@
                         <span class="mono text-[10px] border border-zinc-700 px-2 py-1 rounded" style="color: #e4e4e7">SF Einstein · AI at scale</span>
                     </div>
                 </div>
-                <div class="flex flex-col justify-center gap-6 md:border-l md:border-zinc-800 md:pl-12">
+                <div class="flex flex-col justify-center gap-2 flex-shrink-0 md:border-l md:border-zinc-800 md:pl-6 w-auto">
                     <div>
                         <span class="text-4xl font-bold text-white">3</span>
-                        <p class="mono text-[10px] uppercase tracking-widest mt-1" style="color: #e4e4e7">Brands / Portfolio</p>
+                        <p class="mono text-[10px] uppercase tracking-widest mt-0" style="color: #e4e4e7">Brands / Portfolio</p>
                     </div>
                     <div>
                         <span class="text-4xl font-bold text-white">40–45</span>
@@ -79,23 +79,37 @@
 
         <!-- Card 2: Zenni Optical -->
         <div class="group relative p-8 border border-zinc-800 rounded-2xl bg-zinc-900/30 hover:bg-zinc-900/50 transition-all duration-500 mb-8">
-            <div class="flex flex-col md:flex-row justify-between gap-8">
-                <div class="max-w-xl">
+            <div class="flex flex-col md:flex-row justify-between gap-4">
+                <div class="flex-1">
                     <span class="mono text-xs bg-zinc-800 px-2 py-1 rounded" style="color: #e4e4e7">0→1 · B2B2C · AI/ML</span>
                     <h3 class="text-3xl font-bold mt-4 mb-4 text-white">Building a B2B2C Platform from Zero</h3>
                     <p class="leading-relaxed mb-6" style="color: #e4e4e7">
                         No roadmap. No precedent. Just a problem worth solving. I built Zenni's B2B2C enterprise platform from the ground up — leading engineering, design, QA, analytics, and AI/ML across the full lifecycle. The AI-powered analytics layer I pushed for became the deciding factor in enterprise deal sign-offs. I automated onboarding workflows that saved 500 hours annually, cut launch timelines by 2 months, and took the platform to 15+ enterprise accounts. I also represented the product at Shoptalk and Vision Expo, presenting to 500+ industry leaders.
                     </p>
-                    <div class="flex flex-wrap gap-3">
+                    <div class="mt-4 flex flex-col items-start">
+                        <button class="demo-toggle inline-flex items-center gap-2 px-4 py-2 bg-white text-black text-sm rounded-md font-medium shadow-sm border border-zinc-200 mono hover:shadow-md" aria-expanded="false" aria-controls="zenni-demo">▶ View demo</button>
+                        <div id="zenni-demo" class="mt-3 hidden">
+                            <div class="relative rounded-3xl shadow-xl border border-zinc-800 bg-black" style="max-width:380px; width:100%;">
+                                <div class="rounded-t-3xl bg-zinc-900" style="height:18px;"></div>
+                                <div class="overflow-hidden rounded-b-3xl">
+                                    <video muted loop playsinline class="w-full block" data-autoplay="true" preload="none">
+                                        <source data-src="./zenni_portal_demo.mp4" type="video/mp4" />
+                                        Your browser does not support this video format.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3 mt-6">
                         <span class="mono text-[10px] border border-zinc-700 px-2 py-1 rounded" style="color: #e4e4e7">$5.3M+ · Revenue driven</span>
                         <span class="mono text-[10px] border border-zinc-700 px-2 py-1 rounded" style="color: #e4e4e7">20% YoY · Adoption growth</span>
                         <span class="mono text-[10px] border border-zinc-700 px-2 py-1 rounded" style="color: #e4e4e7">25% · Client conversion lift</span>
                     </div>
                 </div>
-                <div class="flex flex-col justify-center gap-6 md:border-l md:border-zinc-800 md:pl-12">
+                <div class="flex flex-col justify-center gap-2 flex-shrink-0 md:border-l md:border-zinc-800 md:pl-6 w-auto">
                     <div>
                         <span class="text-4xl font-bold text-white">$5.3M+</span>
-                        <p class="mono text-[10px] uppercase tracking-widest mt-1" style="color: #e4e4e7">Revenue driven</p>
+                        <p class="mono text-[10px] uppercase tracking-widest mt-0" style="color: #e4e4e7">Revenue driven</p>
                     </div>
                     <div>
                         <span class="text-4xl font-bold text-white">20%</span>
@@ -107,23 +121,32 @@
 
         <!-- Card 3: Rodan + Fields -->
         <div class="group relative p-8 border border-zinc-800 rounded-2xl bg-zinc-900/30 hover:bg-zinc-900/50 transition-all duration-500 mb-8">
-            <div class="flex flex-col md:flex-row justify-between gap-8">
-                <div class="max-w-xl">
+            <div class="flex flex-col md:flex-row justify-between gap-4">
+                <div class="flex-1">
                     <span class="mono text-xs bg-zinc-800 px-2 py-1 rounded" style="color: #e4e4e7">MOBILE · COMMERCE · UX</span>
                     <h3 class="text-3xl font-bold mt-4 mb-4 text-white">Mobile Cart Redesign & Personalized Commerce</h3>
                     <p class="leading-relaxed mb-6" style="color: #e4e4e7">
                         Drove 12% cross-sell revenue growth and reduced cart abandonment by 15% by redesigning the mobile Mini Cart and launching personalized promotions for 500K+ users. Conducted in-store and remote user research to validate assumptions before building. Raised CSAT by 12% through A/B-tested checkout improvements and reduced support ticket volume by 1,000 tickets per month through better UX and self-service flows.
                     </p>
-                    <div class="flex flex-wrap gap-3">
+                    <div class="mt-4 flex flex-col items-start">
+                        <button class="demo-toggle inline-flex items-center gap-2 px-4 py-2 bg-white text-black text-sm rounded-md font-medium shadow-sm border border-zinc-200 mono hover:shadow-md" aria-expanded="false" aria-controls="rodan-demo">▶ View demo</button>
+                        <div id="rodan-demo" class="mt-3 hidden">
+                            <video controls class="w-full rounded-2xl border border-zinc-800" preload="none">
+                                <source data-src="./Rodan_Demo.mp4" type="video/mp4" />
+                                Your browser does not support this video format.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3 mt-6">
                         <span class="mono text-[10px] border border-zinc-700 px-2 py-1 rounded" style="color: #e4e4e7">+12% · Cross-sell revenue</span>
                         <span class="mono text-[10px] border border-zinc-700 px-2 py-1 rounded" style="color: #e4e4e7">−15% · Cart abandonment</span>
                         <span class="mono text-[10px] border border-zinc-700 px-2 py-1 rounded" style="color: #e4e4e7">+12% · CSAT improvement</span>
                     </div>
                 </div>
-                <div class="flex flex-col justify-center gap-6 md:border-l md:border-zinc-800 md:pl-12">
+                <div class="flex flex-col justify-center gap-2 flex-shrink-0 md:border-l md:border-zinc-800 md:pl-6 w-auto">
                     <div>
                         <span class="text-4xl font-bold text-white">+12%</span>
-                        <p class="mono text-[10px] uppercase tracking-widest mt-1" style="color: #e4e4e7">Cross-sell revenue</p>
+                        <p class="mono text-[10px] uppercase tracking-widest mt-0" style="color: #e4e4e7">Cross-sell revenue</p>
                     </div>
                     <div>
                         <span class="text-4xl font-bold text-white">−15%</span>
@@ -135,8 +158,8 @@
 
         <!-- Card 4: Early Career -->
         <div class="group relative p-8 border border-zinc-800 rounded-2xl bg-zinc-900/30 hover:bg-zinc-900/50 transition-all duration-500 mb-12">
-            <div class="flex flex-col md:flex-row justify-between gap-8">
-                <div class="max-w-xl">
+            <div class="flex flex-col md:flex-row justify-between gap-4">
+                <div class="flex-1">
                     <span class="mono text-xs bg-zinc-800 px-2 py-1 rounded" style="color: #e4e4e7">PLATFORM · ENTERPRISE · TECHNICAL</span>
                     <h3 class="text-3xl font-bold mt-4 mb-4 text-white">Commerce Infrastructure & Enterprise Delivery</h3>
                     <p class="leading-relaxed mb-6" style="color: #e4e4e7">
@@ -148,10 +171,10 @@
                         <span class="mono text-[10px] border border-zinc-700 px-2 py-1 rounded" style="color: #e4e4e7">$2M+ · Budgets managed</span>
                     </div>
                 </div>
-                <div class="flex flex-col justify-center gap-6 md:border-l md:border-zinc-800 md:pl-12">
+                <div class="flex flex-col justify-center gap-2 flex-shrink-0 md:border-l md:border-zinc-800 md:pl-6 w-auto">
                     <div>
                         <span class="text-4xl font-bold text-white">$2M+</span>
-                        <p class="mono text-[10px] uppercase tracking-widest mt-1" style="color: #e4e4e7">Budgets managed</p>
+                        <p class="mono text-[10px] uppercase tracking-widest mt-0" style="color: #e4e4e7">Budgets managed</p>
                     </div>
                     <div>
                         <span class="text-4xl font-bold text-white">30%</span>
@@ -162,12 +185,39 @@
         </div>
     </main>
 
-    <!-- Skills -->
-    <section id="skills" class="mt-12">
-        <h2 class="mono text-xs mb-6 tracking-[0.2em] uppercase" style="color: #e4e4e7">Stack · 2026</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Earlier Career -->
+    <section class="mt-8 mb-8">
+        <h2 class="mono text-xs mb-6 tracking-[0.2em] uppercase" style="color: #e4e4e7">Earlier Career · 2012–2020</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             <div>
-                <h4 class="font-semibold text-white mb-2">Experimentation</h4>
+                <h3 class="text-lg font-bold text-white mb-1">Best Buy</h3>
+                <p class="text-sm leading-relaxed" style="color: #e4e4e7">GeekSquad.com migration to BestBuy.com · PLP & PDP on bestbuy.com · In-store user research</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-white mb-2">Digital River</h3>
+                <p class="text-sm leading-relaxed" style="color: #e4e4e7">Commerce platform delivery for Adobe, Samsung, and Sony</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-white mb-2">Trane</h3>
+                <p class="text-sm leading-relaxed" style="color: #e4e4e7">Developer-facing APIs and AWS platform PM</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-white mb-2">Valimail</h3>
+                <p class="text-sm leading-relaxed" style="color: #e4e4e7">Scrum Coach · Agile transformation for CEO, CTO, and full org · 30% faster time-to-ship in 8 weeks</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-white mb-2">Prime Therapeutics</h3>
+                <p class="text-sm leading-relaxed" style="color: #e4e4e7">Healthcare platform · Lead Business Analyst</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="mt-8">
+        <h2 class="mono text-xs mb-4 tracking-[0.2em] uppercase" style="color: #e4e4e7">Stack · 2026</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <h4 class="font-semibold text-white mb-1">Experimentation</h4>
                 <p style="color: #e4e4e7">A/B & multivariate testing · Optimizely · Adobe Target · Feature flagging · Experiment design & statistical rigor · Go/no-go frameworks · Opportunity sizing</p>
             </div>
             <div>
@@ -230,7 +280,51 @@
 
     <footer class="mt-16 pt-8 border-t border-zinc-800">
         <p class="mono text-xs uppercase tracking-widest" style="color: #e4e4e7">Aditi Sharma · Senior Product Manager · San Francisco Bay Area · 2026</p>
-        <p class="text-sm mt-2" style="color: #9ca3af">Earlier career: Best Buy · Digital River · Trane · Valimail · Prime Therapeutics · 2012–2020</p>
+        <p class="text-sm mt-2" style="color: #9ca3af">Best Buy · Digital River · Trane · Valimail · Prime Therapeutics · 2012–2020</p>
     </footer>
+    <script>
+        // demo-toggle open state styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .demo-toggle.open { background-color: transparent; color: #6b7280 !important; border: none !important; padding: 0.5rem 0.75rem !important; font-size: 0.75rem !important; box-shadow: none !important; }
+        `;
+        document.head.appendChild(style);
+        // Lazy-load demo videos when user opens the demo toggle
+        document.addEventListener('click', function (e) {
+            const btn = e.target.closest('.demo-toggle');
+            if (!btn) return;
+            const targetId = btn.getAttribute('aria-controls');
+            const panel = document.getElementById(targetId);
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            if (panel.classList.contains('hidden')) {
+                panel.classList.remove('hidden');
+                // style the button as open
+                btn.classList.add('open');
+                // change label
+                btn.textContent = '✖ Close demo';
+                // lazy-load any videos inside
+                const vids = panel.querySelectorAll('video');
+                vids.forEach(v => {
+                    const src = v.querySelector('source[data-src]');
+                    if (src && !src.getAttribute('src')) {
+                        src.setAttribute('src', src.getAttribute('data-src'));
+                        v.load();
+                        // autoplay if flagged
+                        if (v.dataset.autoplay === 'true') {
+                            v.play().catch(()=>{});
+                        }
+                    }
+                });
+            } else {
+                panel.classList.add('hidden');
+                // reset button style and label
+                btn.classList.remove('open');
+                btn.textContent = '▶ View demo';
+                const vids = panel.querySelectorAll('video');
+                vids.forEach(v => { v.pause(); });
+            }
+        });
+    </script>
 </body>
 </html>
