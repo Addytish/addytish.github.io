@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zenni Optical — Aditi Sharma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .cs-page{max-width:760px;margin:0 auto;padding:0 2rem 6rem}
+    .cs-nav{display:flex;justify-content:space-between;align-items:center;padding:1.75rem 0;border-bottom:0.5px solid var(--line);margin-bottom:4rem}
+    .cs-nav-logo{font-family:var(--font-display);font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;color:var(--black);text-decoration:none}
+    .cs-nav-links{display:flex;gap:2.5rem;list-style:none}
+    .cs-nav-links a{font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-600);text-decoration:none;font-weight:500;transition:color 0.25s}
+    .cs-nav-links a:hover{color:var(--black)}
+    .cs-nav-links a.active{color:var(--black);position:relative;text-decoration:none}
+    .cs-nav-links a.active::after{content:'';position:absolute;left:0;top:50%;width:100%;height:1.5px;background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6)}
+    .cs-back{font-size:0.75rem;color:var(--gray-400);letter-spacing:0.06em;text-decoration:none;display:inline-block;margin-bottom:2rem;transition:color 0.2s}
+    .cs-back:hover{color:var(--black)}
+    .cs-hero{padding-bottom:3rem;border-bottom:0.5px solid var(--line);margin-bottom:3rem}
+    .cs-eyebrow{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray-400);margin-bottom:1rem}
+    .cs-company{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-0.03em;color:var(--black);line-height:1.05;margin-bottom:0.75rem}
+    .cs-summary{font-size:1.05rem;color:var(--gray-600);line-height:1.8;max-width:620px;margin-bottom:2.5rem}
+    .cs-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:0.5px solid var(--line);border-radius:14px;overflow:hidden}
+    .cs-metric{background:var(--white);padding:1.25rem 1rem}
+    .cs-metric-val{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--black);letter-spacing:-0.02em;line-height:1;margin-bottom:4px}
+    .cs-metric-label{font-size:0.62rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.05em;line-height:1.4}
+    .cs-section{margin-bottom:3rem;padding-bottom:3rem;border-bottom:0.5px solid var(--line)}
+    .cs-section:last-of-type{border-bottom:none}
+    .cs-section-num{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;margin-bottom:0.75rem}
+    .cs-section-title{font-family:var(--font-display);font-size:1.4rem;font-weight:600;letter-spacing:-0.02em;color:var(--black);margin-bottom:1.25rem;line-height:1.2}
+    .cs-body{font-size:0.92rem;color:var(--gray-600);line-height:1.85;margin-bottom:1rem}
+    .cs-bullets{list-style:none;display:flex;flex-direction:column;gap:0.75rem;margin-top:1rem}
+    .cs-bullets li{font-size:0.88rem;color:var(--gray-600);line-height:1.75;padding-left:1.25rem;position:relative}
+    .cs-bullets li::before{content:'→';position:absolute;left:0;color:var(--gray-400)}
+    .cs-results{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+    .cs-result{background:var(--off-white);border:0.5px solid var(--gray-200);border-radius:14px;padding:1.25rem}
+    .cs-result-val{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--black);letter-spacing:-0.02em;line-height:1;margin-bottom:6px}
+    .cs-result-label{font-size:0.78rem;color:var(--gray-600);line-height:1.55}
+    .cs-footer{margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--line);display:flex;justify-content:space-between;font-size:0.7rem;color:var(--gray-400);flex-wrap:wrap;gap:0.5rem}
+  </style>
+</head>
+<body>
+<div class="cs-page">
+  <nav class="cs-nav">
+    <a href="index.html" class="cs-nav-logo">Aditi Sharma</a>
+    <ul class="cs-nav-links">
+      <li><a href="index.html#work" class="active">Work</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="cs-hero">
+    <a href="index.html" class="cs-back">← Back to portfolio</a>
+    <p class="cs-eyebrow">Case Study · Feb 2022 – March 2025 · Senior Product Manager</p>
+    <h1 class="cs-company">Zenni Optical</h1>
+    <p class="cs-summary">Built a B2B2C enterprise platform from zero — three product lines, 15+ enterprise clients, AI-powered computer vision, and $5.3M in revenue where nothing existed before.</p>
+    <div class="cs-metrics">
+      <div class="cs-metric">
+        <div class="cs-metric-val">$5.3M+</div>
+        <div class="cs-metric-label">Revenue driven</div>
+      </div>
+      <div class="cs-metric">
+        <div class="cs-metric-val">25%</div>
+        <div class="cs-metric-label">Enterprise conversion lift</div>
+      </div>
+      <div class="cs-metric">
+        <div class="cs-metric-val">15+</div>
+        <div class="cs-metric-label">Enterprise accounts</div>
+      </div>
+      <div class="cs-metric">
+        <div class="cs-metric-val">3</div>
+        <div class="cs-metric-label">Product lines from zero</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">01 · Problem</p>
+    <h2 class="cs-section-title">No platform. No roadmap. No precedent.</h2>
+    <p class="cs-body">Zenni had no B2B2C platform, no enterprise portal, and no way for organizations to offer eyewear benefits to their employees. Healthcare companies, universities, and eye care providers needed a scalable solution — but the infrastructure to serve them didn't exist.</p>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">02 · My Role</p>
+    <h2 class="cs-section-title">What I owned.</h2>
+    <p class="cs-body">Led the full 0→1 build across three product lines — Vision Benefits, Safety Eyewear, and Corporate Gifting. Owned product strategy, roadmap, and cross-functional execution across Engineering, Design, QA, Analytics, and AI/ML from concept to live platform.</p>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">03 · Approach</p>
+    <h2 class="cs-section-title">How I built it.</h2>
+    <ul class="cs-bullets">
+      <li>Engaged healthcare, university, and eye care provider stakeholders directly to validate assumptions before building</li>
+      <li>Led an AI-powered computer vision product using facial scan data to deliver personalized eyewear recommendations</li>
+      <li>Built the enterprise analytics layer that gave clients real-time utilization data — became the deciding factor in contract sign-offs, driving 25% client conversion lift</li>
+      <li>Designed the self-serve onboarding portal that cut client time-to-value from weeks to minutes and reduced admin effort by 30%</li>
+      <li>Compressed launch timelines by 2 months through disciplined dependency management and cross-functional alignment</li>
+      <li>Represented the platform at Shoptalk Las Vegas and Vision Expo New York — demoed live, pitched to 500+ enterprise buyers</li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">04 · Demo</p>
+    <h2 class="cs-section-title">Platform in action.</h2>
+    <p class="cs-body">Live demo of the Zenni Business enterprise portal — the self-serve onboarding and product selection flow built from zero.</p>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">05 · Results</p>
+    <h2 class="cs-section-title">Outcomes.</h2>
+    <div class="cs-results">
+      <div class="cs-result">
+        <div class="cs-result-val">$5.3M+</div>
+        <div class="cs-result-label">Revenue generated from a platform that didn't exist when I joined</div>
+      </div>
+      <div class="cs-result">
+        <div class="cs-result-val">+25%</div>
+        <div class="cs-result-label">Enterprise client conversion — driven by the analytics layer I built</div>
+      </div>
+      <div class="cs-result">
+        <div class="cs-result-val">15+</div>
+        <div class="cs-result-label">Enterprise accounts activated across healthcare, university, and eye care</div>
+      </div>
+      <div class="cs-result">
+        <div class="cs-result-val">Promoted</div>
+        <div class="cs-result-label">To Senior Product Manager mid-2024 — recognized for the platform's zero-to-one success</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-footer">
+    <span>Aditi Sharma · Senior Product Manager · 2026</span>
+    <a href="index.html" style="color:var(--gray-400);text-decoration:none">← Back to portfolio</a>
+  </div>
+</div>
+</body>
+</html>
