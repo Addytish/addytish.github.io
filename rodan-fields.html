@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .cs-page{max-width:800px;margin:0 auto;padding:0 3rem 6rem}
+    .cs-page{max-width:100%;margin:0 auto;padding:0 4rem 6rem}
     .cs-nav{display:flex;justify-content:space-between;align-items:center;padding:1.75rem 0;border-bottom:0.5px solid var(--line);margin-bottom:4rem}
     .cs-nav-logo{font-family:var(--font-display);font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;color:var(--black);text-decoration:none}
     .cs-nav-links{display:flex;gap:2.5rem;list-style:none}
@@ -22,12 +22,12 @@
     .cs-hero{padding-bottom:3rem;border-bottom:0.5px solid var(--line);margin-bottom:3rem}
     .cs-eyebrow{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray-400);margin-bottom:1rem}
     .cs-company{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-0.03em;color:var(--black);line-height:1.05;margin-bottom:0.75rem}
-    .cs-summary{font-size:1.05rem;color:var(--gray-600);line-height:1.8;max-width:620px;margin-bottom:2.5rem}
+    .cs-summary{font-size:1.05rem;color:var(--gray-600);line-height:1.8;max-width:680px;margin-bottom:2.5rem}
     .cs-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:0.5px solid var(--line);border-radius:14px;overflow:hidden}
     .cs-metric{background:var(--white);padding:1.25rem 1rem}
     .cs-metric-val{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--black);letter-spacing:-0.02em;line-height:1;margin-bottom:4px}
     .cs-metric-label{font-size:0.62rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.05em;line-height:1.4}
-    .cs-section{margin-bottom:3rem;padding-bottom:3rem;border-bottom:0.5px solid var(--line)}
+    .cs-section{margin-bottom:3.5rem;padding-bottom:3.5rem;border-bottom:0.5px solid var(--line)}
     .cs-section:last-of-type{border-bottom:none}
     .cs-section-num{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;margin-bottom:0.75rem}
     .cs-section-title{font-family:var(--font-display);font-size:1.4rem;font-weight:600;letter-spacing:-0.02em;color:var(--black);margin-bottom:1.25rem;line-height:1.2}
@@ -39,7 +39,11 @@
     .cs-result{background:var(--off-white);border:0.5px solid var(--gray-200);border-radius:14px;padding:1.25rem}
     .cs-result-val{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--black);letter-spacing:-0.02em;line-height:1;margin-bottom:6px}
     .cs-result-label{font-size:0.78rem;color:var(--gray-600);line-height:1.55}
-    .cs-video{width:100%;border-radius:14px;border:0.5px solid var(--gray-200);margin-top:1.5rem;display:block}
+    .cs-two-col{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+    .cs-video{width:100%;border-radius:14px;border:0.5px solid var(--gray-200);display:block}
+    .cs-video-label{font-size:0.68rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.06em;margin-top:0.75rem;text-align:center}
+    .cs-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:1.25rem}
+    .cs-tag{font-size:0.68rem;padding:3px 10px;border:0.5px solid var(--gray-200);border-radius:100px;color:var(--gray-600)}
     .cs-footer{margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--line);display:flex;justify-content:space-between;font-size:0.7rem;color:var(--gray-400);flex-wrap:wrap;gap:0.5rem}
   </style>
 </head>
@@ -61,76 +65,80 @@
     <h1 class="cs-company">Rodan + Fields</h1>
     <p class="cs-summary">Led the Mini Cart from zero — redesigning mobile checkout and launching personalized promotions for 500K+ users. Drove measurable improvements in revenue, retention, and customer experience.</p>
     <div class="cs-metrics">
-      <div class="cs-metric">
-        <div class="cs-metric-val">+12%</div>
-        <div class="cs-metric-label">Cross-sell revenue growth</div>
+      <div class="cs-metric"><div class="cs-metric-val">+12%</div><div class="cs-metric-label">Cross-sell revenue</div></div>
+      <div class="cs-metric"><div class="cs-metric-val">−15%</div><div class="cs-metric-label">Cart abandonment</div></div>
+      <div class="cs-metric"><div class="cs-metric-val">500K+</div><div class="cs-metric-label">Users impacted</div></div>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">Problem</p>
+    <h2 class="cs-section-title">No Mini Cart. High abandonment. Revenue left on the table.</h2>
+    <p class="cs-body">Rodan + Fields had no embedded checkout experience. Cart abandonment was high, cross-sell opportunities were being missed, and mobile checkout friction was directly impacting revenue across a 500K+ user base.</p>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">Gathered Insights</p>
+    <h2 class="cs-section-title">User research before a single line of code.</h2>
+    <ul class="cs-bullets">
+      <li>Conducted remote user research sessions to map the full checkout journey and identify highest-friction moments</li>
+      <li>Ran funnel analysis to pinpoint exact drop-off stages and quantify the revenue impact</li>
+      <li>Analyzed competitive mobile cart experiences across beauty and DTC brands to identify best practices</li>
+      <li>Validated assumptions about what a Mini Cart needed to include to actually change behavior — not just check a feature box</li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">Solution</p>
+    <h2 class="cs-section-title">Mini Cart from zero — with personalization layered on top.</h2>
+    <div class="cs-two-col">
+      <div>
+        <ul class="cs-bullets">
+          <li>Led Mini Cart build from zero — embedded checkout integrating full payment flow, promotional savings, perks display, and subscription options in one seamless experience</li>
+          <li>Launched personalized promotions for 500K+ users based on purchase history and subscription tier</li>
+          <li>Owned subscription tier structures and auto-ship billing logic to support retention mechanics</li>
+          <li>A/B tested every checkout change — validated against cart abandonment and cross-sell metrics before shipping</li>
+        </ul>
       </div>
-      <div class="cs-metric">
-        <div class="cs-metric-val">−15%</div>
-        <div class="cs-metric-label">Cart abandonment</div>
-      </div>
-      <div class="cs-metric">
-        <div class="cs-metric-val">500K+</div>
-        <div class="cs-metric-label">Users impacted</div>
+      <div>
+        <video class="cs-video" autoplay muted loop playsinline>
+          <source src="Rodan_Demo.mp4" type="video/mp4">
+          <source src="Rodan_Demo.mov" type="video/quicktime">
+        </video>
+        <p class="cs-video-label">Rodan + Fields Mini Cart — live product</p>
       </div>
     </div>
   </div>
 
   <div class="cs-section">
-    <p class="cs-section-num">01 · Problem</p>
-    <h2 class="cs-section-title">No Mini Cart. High abandonment. Revenue left on the table.</h2>
-    <p class="cs-body">Rodan + Fields had no embedded checkout experience. Cart abandonment was high, cross-sell opportunities were missed, and mobile checkout friction was directly impacting revenue across a 500K+ user base.</p>
-  </div>
-
-  <div class="cs-section">
-    <p class="cs-section-num">02 · My Role</p>
-    <h2 class="cs-section-title">What I owned.</h2>
-    <p class="cs-body">Led the Mini Cart from concept to launch — full ownership of product strategy, UX definition, user research, and cross-functional execution. Also owned personalized promotions, subscription tier structures, and auto-ship billing logic.</p>
-  </div>
-
-  <div class="cs-section">
-    <p class="cs-section-num">03 · Approach</p>
-    <h2 class="cs-section-title">How I built it.</h2>
+    <p class="cs-section-num">Implementation Process</p>
+    <h2 class="cs-section-title">Research → prototype → test → ship.</h2>
     <ul class="cs-bullets">
-      <li>Conducted remote user research sessions to map checkout friction points and validate assumptions before building</li>
-      <li>Ran funnel analysis to identify highest drop-off stages and prioritize fixes</li>
-      <li>Led Mini Cart build from zero — embedded checkout integrating full payment flow, promotional savings, perks display, and subscription options in one experience</li>
-      <li>Launched personalized promotions for 500K+ users based on purchase history and subscription tier</li>
-      <li>Owned subscription tier structures and auto-ship billing logic to support retention mechanics</li>
-      <li>A/B tested every checkout change — validated against cart abandonment and cross-sell metrics before shipping</li>
+      <li>Started with user research to validate the problem before defining the solution</li>
+      <li>Worked with design to prototype the Mini Cart UX — focused on reducing steps and surfacing promotions at the right moment</li>
+      <li>Ran A/B tests at each stage — nothing shipped without data backing</li>
+      <li>Coordinated Engineering, Design, and Analytics across the full build and launch cycle</li>
     </ul>
   </div>
 
   <div class="cs-section">
-    <p class="cs-section-num">04 · Demo</p>
-    <h2 class="cs-section-title">Mini Cart in action.</h2>
-    <p class="cs-body">Live recording of the Rodan + Fields Mini Cart — the embedded checkout experience I led from zero, still live on their site today.</p>
-    <video class="cs-video" autoplay muted loop playsinline>
-      <source src="Rodan_Demo.mp4" type="video/mp4">
-      <source src="Rodan_Demo.mov" type="video/quicktime">
-    </video>
+    <p class="cs-section-num">Prototyping & UI Design</p>
+    <h2 class="cs-section-title">Designing for mobile-first behavior.</h2>
+    <ul class="cs-bullets">
+      <li>Collaborated with design on Mini Cart UX — focused on one-thumb reachability, clear promo visibility, and subscription tier clarity</li>
+      <li>Iterated on promotional display format based on user research findings — what users saw vs what drove action</li>
+      <li>Ensured the perks and savings display was prominent enough to reduce abandonment without cluttering the checkout flow</li>
+    </ul>
   </div>
 
   <div class="cs-section">
-    <p class="cs-section-num">05 · Results</p>
+    <p class="cs-section-num">Results</p>
     <h2 class="cs-section-title">Outcomes.</h2>
     <div class="cs-results">
-      <div class="cs-result">
-        <div class="cs-result-val">+12%</div>
-        <div class="cs-result-label">Cross-sell revenue growth through personalized promotions and improved cart UX</div>
-      </div>
-      <div class="cs-result">
-        <div class="cs-result-val">−15%</div>
-        <div class="cs-result-label">Cart abandonment reduction — validated through A/B testing before full release</div>
-      </div>
-      <div class="cs-result">
-        <div class="cs-result-val">500K+</div>
-        <div class="cs-result-label">Users experiencing a redesigned checkout built from zero</div>
-      </div>
-      <div class="cs-result">
-        <div class="cs-result-val">Still live</div>
-        <div class="cs-result-label">Mini Cart shipped and still running on rodanandfields.com — product that outlasted the role</div>
-      </div>
+      <div class="cs-result"><div class="cs-result-val">+12%</div><div class="cs-result-label">Cross-sell revenue growth through personalized promotions and improved cart UX</div></div>
+      <div class="cs-result"><div class="cs-result-val">−15%</div><div class="cs-result-label">Cart abandonment reduction — validated through A/B testing before full release</div></div>
+      <div class="cs-result"><div class="cs-result-val">500K+</div><div class="cs-result-label">Users experiencing a redesigned checkout built from zero</div></div>
+      <div class="cs-result"><div class="cs-result-val">Still live</div><div class="cs-result-label">Mini Cart still running on rodanandfields.com — product that outlasted the role</div></div>
     </div>
   </div>
 

@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .cs-page{max-width:800px;margin:0 auto;padding:0 3rem 6rem}
+    .cs-page{max-width:100%;margin:0 auto;padding:0 4rem 6rem}
     .cs-nav{display:flex;justify-content:space-between;align-items:center;padding:1.75rem 0;border-bottom:0.5px solid var(--line);margin-bottom:4rem}
     .cs-nav-logo{font-family:var(--font-display);font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;color:var(--black);text-decoration:none}
     .cs-nav-links{display:flex;gap:2.5rem;list-style:none}
@@ -22,12 +22,12 @@
     .cs-hero{padding-bottom:3rem;border-bottom:0.5px solid var(--line);margin-bottom:3rem}
     .cs-eyebrow{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray-400);margin-bottom:1rem}
     .cs-company{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-0.03em;color:var(--black);line-height:1.05;margin-bottom:0.75rem}
-    .cs-summary{font-size:1.05rem;color:var(--gray-600);line-height:1.8;max-width:620px;margin-bottom:2.5rem}
+    .cs-summary{font-size:1.05rem;color:var(--gray-600);line-height:1.8;max-width:680px;margin-bottom:2.5rem}
     .cs-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:0.5px solid var(--line);border-radius:14px;overflow:hidden}
     .cs-metric{background:var(--white);padding:1.25rem 1rem}
     .cs-metric-val{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--black);letter-spacing:-0.02em;line-height:1;margin-bottom:4px}
     .cs-metric-label{font-size:0.62rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.05em;line-height:1.4}
-    .cs-section{margin-bottom:3rem;padding-bottom:3rem;border-bottom:0.5px solid var(--line)}
+    .cs-section{margin-bottom:3.5rem;padding-bottom:3.5rem;border-bottom:0.5px solid var(--line)}
     .cs-section:last-of-type{border-bottom:none}
     .cs-section-num{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;margin-bottom:0.75rem}
     .cs-section-title{font-family:var(--font-display);font-size:1.4rem;font-weight:600;letter-spacing:-0.02em;color:var(--black);margin-bottom:1.25rem;line-height:1.2}
@@ -39,7 +39,10 @@
     .cs-result{background:var(--off-white);border:0.5px solid var(--gray-200);border-radius:14px;padding:1.25rem}
     .cs-result-val{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--black);letter-spacing:-0.02em;line-height:1;margin-bottom:6px}
     .cs-result-label{font-size:0.78rem;color:var(--gray-600);line-height:1.55}
+    .cs-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:1.25rem}
+    .cs-tag{font-size:0.68rem;padding:3px 10px;border:0.5px solid var(--gray-200);border-radius:100px;color:var(--gray-600)}
     .cs-footer{margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--line);display:flex;justify-content:space-between;font-size:0.7rem;color:var(--gray-400);flex-wrap:wrap;gap:0.5rem}
+    .cs-placeholder{background:var(--off-white);border:0.5px solid var(--gray-200);border-radius:14px;padding:2rem;text-align:center;color:var(--gray-400);font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;margin-top:1.5rem}
   </style>
 </head>
 <body>
@@ -60,70 +63,60 @@
     <h1 class="cs-company">Williams-Sonoma, Inc.</h1>
     <p class="cs-summary">Leading multi-brand A/B experimentation and contributing to AI-powered personalization across 5 retail brands — with full autonomy, no knowledge transfer, and a live program to own from day one.</p>
     <div class="cs-metrics">
-      <div class="cs-metric">
-        <div class="cs-metric-val">5</div>
-        <div class="cs-metric-label">Brands — PB, PBK, PBT, Green Row, M&G</div>
-      </div>
-      <div class="cs-metric">
-        <div class="cs-metric-val">40–45</div>
-        <div class="cs-metric-label">Tests per brand per year</div>
-      </div>
-      <div class="cs-metric">
-        <div class="cs-metric-val">SF Einstein</div>
-        <div class="cs-metric-label">AI personalization</div>
-      </div>
-      <div class="cs-metric">
-        <div class="cs-metric-val">Millions</div>
-        <div class="cs-metric-label">Users reached</div>
-      </div>
+      <div class="cs-metric"><div class="cs-metric-val">5</div><div class="cs-metric-label">Brands — PB, PBK, PBT, Green Row, M&G</div></div>
+      <div class="cs-metric"><div class="cs-metric-val">40–45</div><div class="cs-metric-label">Tests per brand per year</div></div>
+      <div class="cs-metric"><div class="cs-metric-val">SF Einstein</div><div class="cs-metric-label">AI personalization</div></div>
+      <div class="cs-metric"><div class="cs-metric-val">Millions</div><div class="cs-metric-label">Users reached</div></div>
     </div>
   </div>
 
   <div class="cs-section">
-    <p class="cs-section-num">01 · Problem</p>
+    <p class="cs-section-num">Problem</p>
     <h2 class="cs-section-title">Full ownership. No handoff. No runway.</h2>
     <p class="cs-body">The experimentation program was already running across multiple brands when I stepped in — but there was no knowledge transfer, no documentation handoff, and no ramp-up period. I had to self-navigate a live, high-velocity program across 5 brands simultaneously while building stakeholder trust from day one.</p>
   </div>
 
   <div class="cs-section">
-    <p class="cs-section-num">02 · My Role</p>
-    <h2 class="cs-section-title">What I owned vs. contributed to.</h2>
-    <p class="cs-body"><strong>Owned:</strong> Full A/B experimentation program — strategy, test calendar, cross-functional execution, and weekly executive readouts across all 5 brands.</p>
-    <p class="cs-body"><strong>Contributed to:</strong> Salesforce Einstein AI personalization — running live campaigns, configuring personalization rules, and defining recommendation surfaces across web and mobile.</p>
-  </div>
-
-  <div class="cs-section">
-    <p class="cs-section-num">03 · Approach</p>
-    <h2 class="cs-section-title">How I ran it.</h2>
+    <p class="cs-section-num">Gathered Insights</p>
+    <h2 class="cs-section-title">Understanding 5 brands, their audiences, and their priorities.</h2>
     <ul class="cs-bullets">
-      <li>Defined experimentation roadmap across 5 brands — opportunity sizing, hypothesis development, and test prioritization</li>
-      <li>Coordinated cross-functional execution across Engineering, Analytics, and Brand teams to keep 40–45 tests per brand per year on track</li>
-      <li>Presented go/no-go/iterate/stop recommendations to brand and executive leadership — grounded in statistical rigor and business context</li>
-      <li>Managed multi-brand dependencies where test pipelines, engineering capacity, and brand calendars intersect simultaneously</li>
-      <li>Ran live Salesforce Einstein personalization campaigns — recently-viewed carousels, best seller modules, and content targeting across web and mobile</li>
+      <li>Rapidly onboarded across 5 distinct brand identities — each with its own customer base, merchandising calendar, and stakeholder expectations</li>
+      <li>Analyzed existing test backlog, historical results, and brand performance data to identify gaps and opportunities</li>
+      <li>Built relationships with brand leads, engineering, and analytics teams to understand cross-functional dependencies</li>
+      <li>Mapped personalization surfaces across web and mobile to understand where Salesforce Einstein was and wasn't being leveraged</li>
     </ul>
   </div>
 
   <div class="cs-section">
-    <p class="cs-section-num">04 · Results</p>
+    <p class="cs-section-num">Solution</p>
+    <h2 class="cs-section-title">Experimentation as an operating system across 5 brands.</h2>
+    <ul class="cs-bullets">
+      <li>Defined experimentation roadmap across all 5 brands — opportunity sizing, hypothesis development, and test prioritization</li>
+      <li>Established consistent go/no-go decision framework grounded in statistical rigor and business context</li>
+      <li>Ran live Salesforce Einstein personalization campaigns — recently-viewed carousels, best seller modules, and content targeting across web and mobile</li>
+      <li>Managed multi-brand dependencies where test pipelines, engineering capacity, and brand calendars intersect simultaneously</li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">Stakeholder Management</p>
+    <h2 class="cs-section-title">Weekly executive readouts across multiple brand leadership teams.</h2>
+    <ul class="cs-bullets">
+      <li>Presented weekly go/no-go/iterate/stop recommendations to brand and executive leadership — grounded in data, not opinion</li>
+      <li>Aligned engineering, analytics, and brand teams around a shared experimentation calendar and delivery cadence</li>
+      <li>Communicated test results and personalization performance in business terms to senior stakeholders across 5 brands</li>
+      <li>Navigated competing brand priorities and resource constraints to keep all pipelines moving simultaneously</li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">Results</p>
     <h2 class="cs-section-title">Outcomes.</h2>
     <div class="cs-results">
-      <div class="cs-result">
-        <div class="cs-result-val">5 brands</div>
-        <div class="cs-result-label">Full experimentation ownership across PB, PBK, PBT, Green Row, and Mark & Graham</div>
-      </div>
-      <div class="cs-result">
-        <div class="cs-result-val">40–45</div>
-        <div class="cs-result-label">A/B tests shipped per brand annually — each informing a product and release decision</div>
-      </div>
-      <div class="cs-result">
-        <div class="cs-result-val">Program at scale</div>
-        <div class="cs-result-label">Experimentation as an operating system — every test compounds into executive-level product and revenue decisions</div>
-      </div>
-      <div class="cs-result">
-        <div class="cs-result-val">Millions of users</div>
-        <div class="cs-result-label">Reached through Salesforce Einstein AI personalization across 5 high-volume commerce brands</div>
-      </div>
+      <div class="cs-result"><div class="cs-result-val">5 brands</div><div class="cs-result-label">Full experimentation ownership across PB, PBK, PBT, Green Row, and Mark & Graham</div></div>
+      <div class="cs-result"><div class="cs-result-val">40–45</div><div class="cs-result-label">A/B tests shipped per brand annually — each informing a product and release decision</div></div>
+      <div class="cs-result"><div class="cs-result-val">Program at scale</div><div class="cs-result-label">Experimentation as an operating system — every test compounds into executive-level product and revenue decisions</div></div>
+      <div class="cs-result"><div class="cs-result-val">Millions</div><div class="cs-result-label">Users reached through Salesforce Einstein AI personalization across 5 high-volume commerce brands</div></div>
     </div>
   </div>
 

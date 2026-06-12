@@ -9,39 +9,50 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .cs-page{max-width:800px;margin:0 auto;padding:0 3rem 6rem}
+    .cs-page{max-width:100%;margin:0 auto;padding:0 4rem 6rem}
     .cs-nav{display:flex;justify-content:space-between;align-items:center;padding:1.75rem 0;border-bottom:0.5px solid var(--line);margin-bottom:4rem}
     .cs-nav-logo{font-family:var(--font-display);font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;color:var(--black);text-decoration:none}
     .cs-nav-links{display:flex;gap:2.5rem;list-style:none}
-    .cs-nav-links a{font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-600);text-decoration:none;font-weight:500;transition:color 0.25s}
+    .cs-nav-links a{font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-600);text-decoration:none;font-weight:500}
     .cs-nav-links a:hover{color:var(--black)}
     .cs-nav-links a.active{color:var(--black);position:relative;text-decoration:none}
     .cs-nav-links a.active::after{content:'';position:absolute;left:0;top:50%;width:100%;height:1.5px;background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6)}
     .cs-back{font-size:0.75rem;color:var(--gray-400);letter-spacing:0.06em;text-decoration:none;display:inline-block;margin-bottom:2rem;transition:color 0.2s}
     .cs-back:hover{color:var(--black)}
-    .cs-hero{padding-bottom:3rem;border-bottom:0.5px solid var(--line);margin-bottom:3rem}
+    .cs-hero{padding-bottom:3rem;border-bottom:0.5px solid var(--line);margin-bottom:4rem}
     .cs-eyebrow{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray-400);margin-bottom:1rem}
-    .cs-company{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-0.03em;color:var(--black);line-height:1.05;margin-bottom:0.75rem}
-    .cs-summary{font-size:1.05rem;color:var(--gray-600);line-height:1.8;max-width:620px;margin-bottom:2rem}
-    .cs-section{margin-bottom:3rem;padding-bottom:3rem;border-bottom:0.5px solid var(--line)}
-    .cs-section:last-of-type{border-bottom:none}
-    .cs-section-num{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;margin-bottom:0.75rem}
-    .cs-section-title{font-family:var(--font-display);font-size:1.4rem;font-weight:600;letter-spacing:-0.02em;color:var(--black);margin-bottom:1.25rem;line-height:1.2}
-    .cs-body{font-size:0.92rem;color:var(--gray-600);line-height:1.85;margin-bottom:1rem}
-    .cs-bullets{list-style:none;display:flex;flex-direction:column;gap:0.75rem;margin-top:1rem}
-    .cs-bullets li{font-size:0.88rem;color:var(--gray-600);line-height:1.75;padding-left:1.25rem;position:relative}
-    .cs-bullets li::before{content:'→';position:absolute;left:0;color:var(--gray-400)}
-    .cs-company-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:1rem}
-    .cs-tag{font-size:0.68rem;padding:3px 10px;border:0.5px solid var(--gray-200);border-radius:100px;color:var(--gray-600)}
-    .cs-highlight{border-left:2px solid;border-image:linear-gradient(180deg,#A855F7,#06B6D4) 1;padding:1rem 1.25rem;margin-top:1rem;background:var(--off-white);border-radius:0 8px 8px 0}
-    .cs-highlight p{font-size:0.87rem;color:var(--gray-600);line-height:1.75;font-style:italic}
-    .cs-metric-inline{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--black);letter-spacing:-0.02em;display:block;margin-bottom:4px}
-    .cs-metric-inline-label{font-size:0.75rem;color:var(--gray-600)}
+    .cs-title{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-0.03em;color:var(--black);line-height:1.05;margin-bottom:0.75rem}
+    .cs-summary{font-size:1.05rem;color:var(--gray-600);line-height:1.8;max-width:680px}
+
+    /* COMPANY CARD */
+    .company-card{display:grid;grid-template-columns:1fr 2fr;gap:3rem;padding:3rem 0;border-bottom:0.5px solid var(--line);align-items:start}
+    .company-card:last-of-type{border-bottom:none}
+    .company-left{}
+    .company-name{font-family:var(--font-display);font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;color:var(--black);margin-bottom:0.25rem}
+    .company-period{font-size:0.72rem;color:var(--gray-400);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1.5rem}
+    .company-metric{background:var(--off-white);border:0.5px solid var(--gray-200);border-radius:12px;padding:1rem 1.25rem;margin-bottom:0.75rem}
+    .company-metric-val{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--black);letter-spacing:-0.02em;line-height:1;margin-bottom:3px}
+    .company-metric-label{font-size:0.65rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.05em}
+    .company-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:1rem}
+    .company-tag{font-size:0.65rem;padding:3px 9px;border:0.5px solid var(--gray-200);border-radius:100px;color:var(--gray-600)}
+    .company-right{}
+    .challenge-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;margin-bottom:0.5rem}
+    .challenge-text{font-size:0.92rem;color:var(--gray-600);line-height:1.8;margin-bottom:1.75rem}
+    .did-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;margin-bottom:0.5rem}
+    .did-text{font-size:0.92rem;color:var(--gray-600);line-height:1.8;margin-bottom:1.75rem}
+    .outcome-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;margin-bottom:0.5rem}
+    .outcome-text{font-size:0.92rem;color:var(--black);font-weight:500;line-height:1.8}
+    .highlight-quote{border-left:2px solid;border-image:linear-gradient(180deg,#A855F7,#06B6D4) 1;padding:0.85rem 1.25rem;margin-top:1.25rem;background:var(--off-white);border-radius:0 8px 8px 0}
+    .highlight-quote p{font-size:0.87rem;color:var(--gray-600);line-height:1.75;font-style:italic}
+    .award-badge{display:inline-flex;align-items:center;gap:0.5rem;background:var(--off-white);border:0.5px solid var(--gray-200);border-radius:100px;padding:6px 14px;font-size:0.75rem;color:var(--gray-600);margin-top:1rem}
+    .award-badge::before{content:'★';color:#F59E0B}
+
     .cs-footer{margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--line);display:flex;justify-content:space-between;font-size:0.7rem;color:var(--gray-400);flex-wrap:wrap;gap:0.5rem}
   </style>
 </head>
 <body>
 <div class="cs-page">
+
   <nav class="cs-nav">
     <a href="index.html" class="cs-nav-logo">Aditi Sharma</a>
     <ul class="cs-nav-links">
@@ -55,91 +66,150 @@
   <div class="cs-hero">
     <a href="index.html" class="cs-back">← Back to portfolio</a>
     <p class="cs-eyebrow">Foundation · 2012 – 2020 · 8 Years</p>
-    <h1 class="cs-company">Early Career</h1>
-    <p class="cs-summary">8 years building the technical and commercial foundation — Agile transformation, platform infrastructure, enterprise commerce, and in-store user research across globally recognized brands.</p>
+    <h1 class="cs-title">Early Career</h1>
+    <p class="cs-summary">8 years of building before building was cool. The technical depth, user empathy, and cross-functional instincts that make everything else possible.</p>
   </div>
 
-  <div class="cs-section">
-    <p class="cs-section-num">Valimail · Most Recent</p>
-    <h2 class="cs-section-title">Scrum Coach — Agile transformation for CEO, CTO, and full org.</h2>
-    <ul class="cs-bullets">
-      <li>Coached the CEO, CTO, and full organization through Agile transformation from scratch</li>
-      <li>Established Scrum practices, sprint cadences, and delivery governance across the entire org</li>
-      <li>Achieved 30% reduction in time-to-ship in 8 weeks</li>
-      <li>Delivered measurable improvement in team velocity and delivery predictability</li>
-    </ul>
-    <div style="margin-top:1.25rem">
-      <span class="cs-metric-inline">30%</span>
-      <span class="cs-metric-inline-label">Faster time-to-ship — achieved in 8 weeks</span>
+  <!-- VALIMAIL -->
+  <div class="company-card">
+    <div class="company-left">
+      <div class="company-name">Valimail</div>
+      <div class="company-metric">
+        <div class="company-metric-val">100%</div>
+        <div class="company-metric-label">Velocity improvement</div>
+      </div>
+      <div class="company-metric">
+        <div class="company-metric-val">30%</div>
+        <div class="company-metric-label">Faster time-to-ship in 8 weeks</div>
+      </div>
+      <div class="company-metric">
+        <div class="company-metric-val">20+</div>
+        <div class="company-metric-label">People across 3 cross-site teams</div>
+      </div>
+      <div class="company-tags">
+        <span class="company-tag">Scrum Coach</span>
+        <span class="company-tag">Agile transformation</span>
+        <span class="company-tag">CTO coaching</span>
+      </div>
     </div>
-    <div class="cs-company-tags">
-      <span class="cs-tag">Scrum Coach</span>
-      <span class="cs-tag">Agile transformation</span>
-      <span class="cs-tag">Executive coaching</span>
-    </div>
-  </div>
-
-  <div class="cs-section">
-    <p class="cs-section-num">Trane</p>
-    <h2 class="cs-section-title">Platform Product Manager — developer-facing APIs.</h2>
-    <ul class="cs-bullets">
-      <li>Owned developer-facing APIs and backend platform as Platform PM</li>
-      <li>Defined API specifications and managed the product roadmap</li>
-      <li>Coordinated engineering delivery for a technical platform serving internal and external developers</li>
-    </ul>
-    <div class="cs-company-tags">
-      <span class="cs-tag">Platform PM</span>
-      <span class="cs-tag">Developer APIs</span>
-      <span class="cs-tag">Backend platform</span>
+    <div class="company-right">
+      <div class="challenge-label">The challenge</div>
+      <p class="challenge-text">A fast-growing startup with no delivery process — shipping was unpredictable, leadership had no visibility, and three cross-site teams including offshore were operating without alignment.</p>
+      <div class="did-label">What I did</div>
+      <p class="did-text">Coached the CEO and CTO directly through full Agile transformation. Built all Scrum ceremonies, training materials, and cross-team operating model from scratch across 20+ people on 3 cross-site teams. Worked with the CTO to present Stakeholder Delight to the full executive team — CTO, VP Product, Marketing, Sales, and CS.</p>
+      <div class="outcome-label">The outcome</div>
+      <p class="outcome-text">100% velocity improvement. 30% faster time-to-ship in 8 weeks. Teams went from unpredictable to self-directed with strong accountability and decision-making.</p>
     </div>
   </div>
 
-  <div class="cs-section">
-    <p class="cs-section-num">Digital River</p>
-    <h2 class="cs-section-title">Enterprise commerce for Adobe, Samsung, and Sony.</h2>
-    <ul class="cs-bullets">
-      <li>Delivered commerce platform products for Fortune 500 clients — Adobe, Samsung, and Sony</li>
-      <li>Managed cross-functional teams across cloud integrations, payments, billing, and enterprise systems</li>
-      <li>Coordinated engineering and operations to deliver predictable roadmaps for global clients</li>
-    </ul>
-    <div class="cs-company-tags">
-      <span class="cs-tag">Adobe</span>
-      <span class="cs-tag">Samsung</span>
-      <span class="cs-tag">Sony</span>
-      <span class="cs-tag">Enterprise commerce</span>
+  <!-- TRANE -->
+  <div class="company-card">
+    <div class="company-left">
+      <div class="company-name">Trane</div>
+      <div class="company-metric">
+        <div class="company-metric-val">AWS</div>
+        <div class="company-metric-label">Platform PM — TIS infrastructure</div>
+      </div>
+      <div class="company-metric">
+        <div class="company-metric-val">Quarterly</div>
+        <div class="company-metric-label">CER presentations to Directors</div>
+      </div>
+      <div class="company-tags">
+        <span class="company-tag">Platform PM</span>
+        <span class="company-tag">AWS</span>
+        <span class="company-tag">Enterprise clients</span>
+        <span class="company-tag">AOP planning</span>
+      </div>
+    </div>
+    <div class="company-right">
+      <div class="challenge-label">The challenge</div>
+      <p class="challenge-text">Trane Intelligent Services needed a secure, scalable platform infrastructure to enable all TIS product development — collecting, processing, storing, and transforming customer building data at scale.</p>
+      <div class="did-label">What I did</div>
+      <p class="did-text">Product Owner for the AWS Platform and Capability teams — the foundation layer that enabled and accelerated all TIS products. Defined roadmap, prioritized backlog, and delivered HVAC Scheduling Integration products for enterprise clients. Created and presented Capital Expenditure Requisitions (CER) to Product Growth Team and Directors every quarter for Annual Operating Plan (AOP).</p>
+      <div class="outcome-label">The outcome</div>
+      <p class="outcome-text">Delivered a scalable platform that accelerated TIS product feature development and release cycles. Multiple enterprise HVAC and remote access products shipped on time.</p>
     </div>
   </div>
 
-  <div class="cs-section">
-    <p class="cs-section-num">Best Buy</p>
-    <h2 class="cs-section-title">GeekSquad.com migration & BestBuy.com PLP/PDP.</h2>
-    <ul class="cs-bullets">
-      <li>Led migration of GeekSquad.com to BestBuy.com — white-labeled to preserve GeekSquad brand trust and customer loyalty</li>
-      <li>Managed PLP and PDP on bestbuy.com across Engineering, Operations, and Merchandising</li>
-      <li>Conducted in-store user research — visited Best Buy showrooms, interviewed staff, GeekSquad technicians, and customers to validate the white-label strategy</li>
-    </ul>
-    <div class="cs-highlight">
-      <p>"Talking directly to GeekSquad technicians and customers showed us that brand trust was the real risk — keeping the GeekSquad identity visible within BestBuy.com was the right call. The research shaped the strategy."</p>
+  <!-- DIGITAL RIVER -->
+  <div class="company-card">
+    <div class="company-left">
+      <div class="company-name">Digital River</div>
+      <div class="company-metric">
+        <div class="company-metric-val">Adobe</div>
+        <div class="company-metric-label">Samsung · Sony · enterprise clients</div>
+      </div>
+      <div class="company-tags">
+        <span class="company-tag">Enterprise commerce</span>
+        <span class="company-tag">Payment systems</span>
+        <span class="company-tag">Checkout optimization</span>
+      </div>
+      <div class="award-badge">Recognized & Rewarded for critical fast-scale delivery</div>
     </div>
-    <div class="cs-company-tags">
-      <span class="cs-tag">PLP & PDP</span>
-      <span class="cs-tag">In-store user research</span>
-      <span class="cs-tag">Brand migration</span>
+    <div class="company-right">
+      <div class="challenge-label">The challenge</div>
+      <p class="challenge-text">Enterprise clients including Adobe, Sony, and Samsung needed critical payment infrastructure — specifically a Payment Account Update system for credit cards tied to active auto-renewing subscriptions — delivered fast and without disruption.</p>
+      <div class="did-label">What I did</div>
+      <p class="did-text">Led the Payment Account Update (PAU) project — ensuring updated card information reached upcoming renewals across active subscriptions at scale. Improved checkout process experiences across multiple Fortune 500 client websites. Created roadmaps, managed costs, identified risks, and delivered on time using Agile methodology.</p>
+      <div class="outcome-label">The outcome</div>
+      <p class="outcome-text">Recognized and Rewarded for delivering a critical, fast-scale project. Improved checkout experience shipped across Adobe, Sony, Samsung, and additional enterprise clients.</p>
     </div>
   </div>
 
-  <div class="cs-section">
-    <p class="cs-section-num">Prime Therapeutics · Earliest</p>
-    <h2 class="cs-section-title">Healthcare platform — Lead Business Analyst.</h2>
-    <ul class="cs-bullets">
-      <li>Led business analysis for healthcare platform initiatives in a regulated enterprise environment</li>
-      <li>Bridged business requirements and technical delivery across cross-functional teams</li>
-      <li>Foundation for the cross-functional product leadership approach that shaped the rest of my career</li>
-    </ul>
-    <div class="cs-company-tags">
-      <span class="cs-tag">Healthcare platform</span>
-      <span class="cs-tag">Lead BA</span>
-      <span class="cs-tag">Enterprise systems</span>
+  <!-- BEST BUY -->
+  <div class="company-card">
+    <div class="company-left">
+      <div class="company-name">Best Buy</div>
+      <div class="company-metric">
+        <div class="company-metric-val">PLP & PDP</div>
+        <div class="company-metric-label">Laptop, tablet, mobile, app</div>
+      </div>
+      <div class="company-metric">
+        <div class="company-metric-val">In-store</div>
+        <div class="company-metric-label">User research — staff & customers</div>
+      </div>
+      <div class="company-tags">
+        <span class="company-tag">GeekSquad migration</span>
+        <span class="company-tag">In-store research</span>
+        <span class="company-tag">Mobile & tablet</span>
+        <span class="company-tag">Checkout</span>
+      </div>
+    </div>
+    <div class="company-right">
+      <div class="challenge-label">The challenge</div>
+      <p class="challenge-text">Migrate GeekSquad.com into BestBuy.com without losing the brand trust and customer loyalty that GeekSquad had built — while continuously improving PLP, PDP, and checkout across laptop, tablet, mobile, and mobile app experiences.</p>
+      <div class="did-label">What I did</div>
+      <p class="did-text">Led the GeekSquad.com migration to BestBuy.com — white-labeled to keep the GeekSquad identity visible and trusted within the BestBuy.com experience. Managed PLP and PDP across all device types. Went into Best Buy showrooms, interviewed GeekSquad technicians and customers directly to validate the strategy before building.</p>
+      <div class="outcome-label">The outcome</div>
+      <p class="outcome-text">Successful migration with brand trust preserved. Continuous checkout and profile improvements shipped iteratively across bestbuy.com.</p>
+      <div class="highlight-quote">
+        <p>"The in-store research shaped everything. Talking directly to GeekSquad technicians and customers showed us that brand trust was the real risk — keeping GeekSquad visible within BestBuy.com was the right call."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEALTHCARE -->
+  <div class="company-card">
+    <div class="company-left">
+      <div class="company-name">Healthcare</div>
+      <div class="company-metric">
+        <div class="company-metric-val">3</div>
+        <div class="company-metric-label">Organizations — Prime, UCare, Express Scripts</div>
+      </div>
+      <div class="company-tags">
+        <span class="company-tag">Prime Therapeutics</span>
+        <span class="company-tag">UCare</span>
+        <span class="company-tag">Express Scripts</span>
+        <span class="company-tag">PEGA platform</span>
+      </div>
+    </div>
+    <div class="company-right">
+      <div class="challenge-label">The challenge</div>
+      <p class="challenge-text">Healthcare organizations needed better digital tools for their clients and members — from Prior Authorization portals to IVR optimization — in regulated, high-stakes enterprise environments.</p>
+      <div class="did-label">What I did</div>
+      <p class="did-text">Built a PEGA-based External Client Portal at Prime Therapeutics enabling external users to view Prior Authorization requests and run reports. Synthesized data across multiple sources to provide IVR optimization and customer experience strategy recommendations. Worked across business, engineering, finance, and contracting teams to design product solutions at UCare and Express Scripts.</p>
+      <div class="outcome-label">The outcome</div>
+      <p class="outcome-text">Foundation for the cross-functional product leadership, analytical rigor, and stakeholder alignment skills that shaped everything that came after.</p>
     </div>
   </div>
 
@@ -147,6 +217,7 @@
     <span>Aditi Sharma · Senior Product Manager · 2026</span>
     <a href="index.html" style="color:var(--gray-400);text-decoration:none">← Back to portfolio</a>
   </div>
+
 </div>
 </body>
 </html>
