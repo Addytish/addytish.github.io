@@ -10,20 +10,19 @@
   <link rel="stylesheet" href="style.css">
   <style>
     .cs-page{max-width:100%;margin:0 auto;padding:0 4rem 6rem}
-    .cs-nav{display:flex;justify-content:space-between;align-items:center;padding:1.75rem 0;border-bottom:0.5px solid var(--line);margin-bottom:4rem}
+    .cs-nav{display:flex;justify-content:space-between;align-items:center;padding:1.75rem 0;border-bottom:0.5px solid var(--line);margin-bottom:4rem;position:sticky;top:0;background:rgba(255,255,255,0.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:10}
     .cs-nav-logo{font-family:var(--font-display);font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;color:var(--black);text-decoration:none}
     .cs-nav-links{display:flex;gap:2.5rem;list-style:none}
     .cs-nav-links a{font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-600);text-decoration:none;font-weight:500;transition:color 0.25s}
-    .cs-nav-links a:hover{color:var(--black)}
-    .cs-nav-links a.active{color:var(--black);position:relative;text-decoration:none}
-    .cs-nav-links a.active::after{content:'';position:absolute;left:0;top:50%;width:100%;height:1.5px;background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6)}
+    .cs-nav-links a:hover,
+    .cs-nav-links a.active{background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;text-decoration:none}
     .cs-back{font-size:0.75rem;color:var(--gray-400);letter-spacing:0.06em;text-decoration:none;display:inline-block;margin-bottom:2rem;transition:color 0.2s}
     .cs-back:hover{color:var(--black)}
     .cs-hero{padding-bottom:3rem;border-bottom:0.5px solid var(--line);margin-bottom:3rem}
     .cs-eyebrow{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray-400);margin-bottom:1rem}
     .cs-company{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-0.03em;color:var(--black);line-height:1.05;margin-bottom:0.75rem}
     .cs-summary{font-size:1.05rem;color:var(--gray-600);line-height:1.8;max-width:680px;margin-bottom:2.5rem}
-    .cs-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:0.5px solid var(--line);border-radius:14px;overflow:hidden}
+    .cs-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:0.5px solid var(--line);border-radius:14px;overflow:hidden;max-width:680px}
     .cs-metric{background:var(--white);padding:1.25rem 1rem}
     .cs-metric-val{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--black);letter-spacing:-0.02em;line-height:1;margin-bottom:4px}
     .cs-metric-label{font-size:0.62rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.05em;line-height:1.4}
@@ -31,21 +30,34 @@
     .cs-section:last-of-type{border-bottom:none}
     .cs-section-num{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;margin-bottom:0.75rem}
     .cs-section-title{font-family:var(--font-display);font-size:1.4rem;font-weight:600;letter-spacing:-0.02em;color:var(--black);margin-bottom:1.25rem;line-height:1.2}
-    .cs-body{font-size:0.92rem;color:var(--gray-600);line-height:1.85;margin-bottom:1rem}
-    .cs-bullets{list-style:none;display:flex;flex-direction:column;gap:0.75rem;margin-top:1rem}
+    .cs-body{font-size:0.92rem;color:var(--gray-600);line-height:1.85;margin-bottom:1rem;max-width:700px}
+    .cs-bullets{list-style:none;display:flex;flex-direction:column;gap:0.75rem;margin-top:1rem;max-width:700px}
     .cs-bullets li{font-size:0.88rem;color:var(--gray-600);line-height:1.75;padding-left:1.25rem;position:relative}
     .cs-bullets li::before{content:'→';position:absolute;left:0;color:var(--gray-400)}
-    .cs-results{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+    .cs-results{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem;max-width:760px}
     .cs-result{background:var(--off-white);border:0.5px solid var(--gray-200);border-radius:14px;padding:1.25rem}
     .cs-result-val{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--black);letter-spacing:-0.02em;line-height:1;margin-bottom:6px}
     .cs-result-label{font-size:0.78rem;color:var(--gray-600);line-height:1.55}
     .cs-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:1.25rem}
     .cs-tag{font-size:0.68rem;padding:3px 10px;border:0.5px solid var(--gray-200);border-radius:100px;color:var(--gray-600)}
     .cs-footer{margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--line);display:flex;justify-content:space-between;font-size:0.7rem;color:var(--gray-400);flex-wrap:wrap;gap:0.5rem}
-    .cs-placeholder{background:var(--off-white);border:0.5px solid var(--gray-200);border-radius:14px;padding:2rem;text-align:center;color:var(--gray-400);font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;margin-top:1.5rem}
+    .cs-placeholder{background:var(--off-white);border:0.5px solid var(--gray-200);border-radius:14px;padding:2rem;text-align:center;color:var(--gray-400);font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;margin-top:1.5rem;max-width:700px}
+
+    @media (max-width: 960px) {
+      .cs-page{padding:0 2.5rem 5rem}
+      .cs-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width: 700px) {
+      .cs-page{padding:0 1.25rem 4rem;overflow-x:hidden}
+      .cs-nav{flex-wrap:wrap;gap:0.75rem;margin-bottom:2.5rem}
+      .cs-nav-links{gap:1rem;flex-wrap:wrap}
+      .cs-results{grid-template-columns:minmax(0,1fr)}
+    }
   </style>
 </head>
 <body>
+<div class="bg-aurora"></div>
+<div class="bg-aurora-cursor"></div>
 <div class="cs-page">
   <nav class="cs-nav">
     <a href="index.html" class="cs-nav-logo">Aditi Sharma</a>
@@ -60,8 +72,8 @@
   <div class="cs-hero">
     <a href="index.html" class="cs-back">← Back to portfolio</a>
     <p class="cs-eyebrow">Case Study · June 2025 – Present · Senior Product Manager</p>
-    <h1 class="cs-company">Williams-Sonoma, Inc.</h1>
-    <p class="cs-summary">Leading multi-brand A/B experimentation and contributing to AI-powered personalization across 5 retail brands — with full autonomy, no knowledge transfer, and a live program to own from day one.</p>
+    <img src="logos/williams-sonoma.svg" alt="Williams-Sonoma logo" class="cs-logo">
+    <p class="cs-summary">I run experimentation across 5 retail brands — 40-45 tests per brand a year — and built the RAG-based Salesforce Einstein personalization that's live in front of millions of shoppers. No handoff, no ramp-up — just a live program and a lot of stakeholders to win over fast.</p>
     <div class="cs-metrics">
       <div class="cs-metric"><div class="cs-metric-val">5</div><div class="cs-metric-label">Brands — PB, PBK, PBT, Green Row, M&G</div></div>
       <div class="cs-metric"><div class="cs-metric-val">40–45</div><div class="cs-metric-label">Tests per brand per year</div></div>
@@ -72,8 +84,8 @@
 
   <div class="cs-section">
     <p class="cs-section-num">Problem</p>
-    <h2 class="cs-section-title">Full ownership. No handoff. No runway.</h2>
-    <p class="cs-body">The experimentation program was already running across multiple brands when I stepped in — but there was no knowledge transfer, no documentation handoff, and no ramp-up period. I had to self-navigate a live, high-velocity program across 5 brands simultaneously while building stakeholder trust from day one.</p>
+    <h2 class="cs-section-title">No handoff. No ramp-up. Just go.</h2>
+    <p class="cs-body">The experimentation program was already live across 5 brands when I started — no documentation, no transition period, no "here's how things work here." I had to figure out the system, earn trust with five sets of stakeholders, and keep every test pipeline moving, all at once.</p>
   </div>
 
   <div class="cs-section">
@@ -93,20 +105,26 @@
     <ul class="cs-bullets">
       <li>Defined experimentation roadmap across all 5 brands — opportunity sizing, hypothesis development, and test prioritization</li>
       <li>Established consistent go/no-go decision framework grounded in statistical rigor and business context</li>
-      <li>Ran live Salesforce Einstein personalization campaigns — recently-viewed carousels, best seller modules, and content targeting across web and mobile</li>
+      <li>Deployed Salesforce Einstein personalization using a RAG-based approach — recently-viewed carousels, best-seller modules, and content targeting, live across web and mobile for millions of shoppers</li>
       <li>Managed multi-brand dependencies where test pipelines, engineering capacity, and brand calendars intersect simultaneously</li>
     </ul>
   </div>
 
   <div class="cs-section">
     <p class="cs-section-num">Stakeholder Management</p>
-    <h2 class="cs-section-title">Weekly executive readouts across multiple brand leadership teams.</h2>
+    <h2 class="cs-section-title">Weekly readouts, straight to brand presidents.</h2>
     <ul class="cs-bullets">
-      <li>Presented weekly go/no-go/iterate/stop recommendations to brand and executive leadership — grounded in data, not opinion</li>
+      <li>I bring go/no-go/iterate/stop calls to brand presidents and leadership every week, myself — grounded in data, not opinion</li>
       <li>Aligned engineering, analytics, and brand teams around a shared experimentation calendar and delivery cadence</li>
       <li>Communicated test results and personalization performance in business terms to senior stakeholders across 5 brands</li>
       <li>Navigated competing brand priorities and resource constraints to keep all pipelines moving simultaneously</li>
     </ul>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">Visual Assets</p>
+    <h2 class="cs-section-title">Experimentation in action.</h2>
+    <div class="cs-placeholder">Screenshots and test examples coming soon</div>
   </div>
 
   <div class="cs-section">
@@ -125,5 +143,6 @@
     <a href="index.html" style="color:var(--gray-400);text-decoration:none">← Back to portfolio</a>
   </div>
 </div>
+<script src="bg-aurora.js"></script>
 </body>
 </html>

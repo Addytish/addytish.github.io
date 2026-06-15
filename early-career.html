@@ -10,13 +10,12 @@
   <link rel="stylesheet" href="style.css">
   <style>
     .cs-page{max-width:100%;margin:0 auto;padding:0 4rem 6rem}
-    .cs-nav{display:flex;justify-content:space-between;align-items:center;padding:1.75rem 0;border-bottom:0.5px solid var(--line);margin-bottom:4rem}
+    .cs-nav{display:flex;justify-content:space-between;align-items:center;padding:1.75rem 0;border-bottom:0.5px solid var(--line);margin-bottom:4rem;position:sticky;top:0;background:rgba(255,255,255,0.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:10}
     .cs-nav-logo{font-family:var(--font-display);font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;color:var(--black);text-decoration:none}
     .cs-nav-links{display:flex;gap:2.5rem;list-style:none}
     .cs-nav-links a{font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-600);text-decoration:none;font-weight:500}
-    .cs-nav-links a:hover{color:var(--black)}
-    .cs-nav-links a.active{color:var(--black);position:relative;text-decoration:none}
-    .cs-nav-links a.active::after{content:'';position:absolute;left:0;top:50%;width:100%;height:1.5px;background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6)}
+    .cs-nav-links a:hover,
+    .cs-nav-links a.active{background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;text-decoration:none}
     .cs-back{font-size:0.75rem;color:var(--gray-400);letter-spacing:0.06em;text-decoration:none;display:inline-block;margin-bottom:2rem;transition:color 0.2s}
     .cs-back:hover{color:var(--black)}
     .cs-hero{padding-bottom:3rem;border-bottom:0.5px solid var(--line);margin-bottom:4rem}
@@ -25,7 +24,7 @@
     .cs-summary{font-size:1.05rem;color:var(--gray-600);line-height:1.8;max-width:680px}
 
     /* COMPANY CARD */
-    .company-card{display:grid;grid-template-columns:1fr 2fr;gap:3rem;padding:3rem 0;border-bottom:0.5px solid var(--line);align-items:start}
+    .company-card{display:grid;grid-template-columns:300px 1fr;gap:3rem;padding:3rem 0;border-bottom:0.5px solid var(--line);align-items:start}
     .company-card:last-of-type{border-bottom:none}
     .company-left{}
     .company-name{font-family:var(--font-display);font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;color:var(--black);margin-bottom:0.25rem}
@@ -35,7 +34,7 @@
     .company-metric-label{font-size:0.65rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.05em}
     .company-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:1rem}
     .company-tag{font-size:0.65rem;padding:3px 9px;border:0.5px solid var(--gray-200);border-radius:100px;color:var(--gray-600)}
-    .company-right{}
+    .company-right{max-width:700px}
     .challenge-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;margin-bottom:0.5rem}
     .challenge-text{font-size:0.92rem;color:var(--gray-600);line-height:1.8;margin-bottom:1.75rem}
     .did-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;margin-bottom:0.5rem}
@@ -48,9 +47,21 @@
     .award-badge::before{content:'★';color:#F59E0B}
 
     .cs-footer{margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--line);display:flex;justify-content:space-between;font-size:0.7rem;color:var(--gray-400);flex-wrap:wrap;gap:0.5rem}
+
+    @media (max-width: 960px) {
+      .cs-page{padding:0 2.5rem 5rem}
+      .company-card{grid-template-columns:minmax(0,1fr);gap:1.5rem}
+    }
+    @media (max-width: 700px) {
+      .cs-page{padding:0 1.25rem 4rem;overflow-x:hidden}
+      .cs-nav{flex-wrap:wrap;gap:0.75rem;margin-bottom:2.5rem}
+      .cs-nav-links{gap:1rem;flex-wrap:wrap}
+    }
   </style>
 </head>
 <body>
+<div class="bg-aurora"></div>
+<div class="bg-aurora-cursor"></div>
 <div class="cs-page">
 
   <nav class="cs-nav">
@@ -67,7 +78,7 @@
     <a href="index.html" class="cs-back">← Back to portfolio</a>
     <p class="cs-eyebrow">Foundation · 2012 – 2020 · 8 Years</p>
     <h1 class="cs-title">Early Career</h1>
-    <p class="cs-summary">8 years of building before building was cool. The technical depth, user empathy, and cross-functional instincts that make everything else possible.</p>
+    <p class="cs-summary">8 years of building before building was cool — the technical depth, user empathy, and cross-functional instincts that make everything else possible. (Bonus fact: I'm also a certified pediatric eye screener — turns out I like helping people see clearly in more ways than one.)</p>
   </div>
 
   <!-- VALIMAIL -->
@@ -105,17 +116,19 @@
   <!-- TRANE -->
   <div class="company-card">
     <div class="company-left">
+      <img src="logos/trane.svg" alt="Trane Technologies logo" class="company-logo">
       <div class="company-name">Trane</div>
       <div class="company-metric">
         <div class="company-metric-val">AWS</div>
-        <div class="company-metric-label">Platform PM — TIS infrastructure</div>
+        <div class="company-metric-label">Technical PM — developer API platform</div>
       </div>
       <div class="company-metric">
         <div class="company-metric-val">Quarterly</div>
         <div class="company-metric-label">CER presentations to Directors</div>
       </div>
       <div class="company-tags">
-        <span class="company-tag">Platform PM</span>
+        <span class="company-tag">Technical PM</span>
+        <span class="company-tag">API platform</span>
         <span class="company-tag">AWS</span>
         <span class="company-tag">Enterprise clients</span>
         <span class="company-tag">AOP planning</span>
@@ -123,9 +136,9 @@
     </div>
     <div class="company-right">
       <div class="challenge-label">The challenge</div>
-      <p class="challenge-text">Trane Intelligent Services needed a secure, scalable platform infrastructure to enable all TIS product development — collecting, processing, storing, and transforming customer building data at scale.</p>
+      <p class="challenge-text">Trane Intelligent Services needed a secure, scalable developer-facing API platform to power all TIS product development — collecting, processing, storing, and transforming customer building data at scale.</p>
       <div class="did-label">What I did</div>
-      <p class="did-text">Product Owner for the AWS Platform and Capability teams — the foundation layer that enabled and accelerated all TIS products. Defined roadmap, prioritized backlog, and delivered HVAC Scheduling Integration products for enterprise clients. Created and presented Capital Expenditure Requisitions (CER) to Product Growth Team and Directors every quarter for Annual Operating Plan (AOP).</p>
+      <p class="did-text">Technical PM for the developer-facing API and backend platform — sitting in architecture discussions with engineering, defining technical requirements, and owning the roadmap for the AWS Platform and Capability teams that every other TIS product was built on. Delivered HVAC Scheduling Integration products for enterprise clients, and presented Capital Expenditure Requisitions (CER) to the Product Growth Team and Directors every quarter for Annual Operating Plan (AOP).</p>
       <div class="outcome-label">The outcome</div>
       <p class="outcome-text">Delivered a scalable platform that accelerated TIS product feature development and release cycles. Multiple enterprise HVAC and remote access products shipped on time.</p>
     </div>
@@ -134,6 +147,7 @@
   <!-- DIGITAL RIVER -->
   <div class="company-card">
     <div class="company-left">
+      <img src="logos/digital-river.svg" alt="Digital River logo" class="company-logo">
       <div class="company-name">Digital River</div>
       <div class="company-metric">
         <div class="company-metric-val">Adobe</div>
@@ -159,6 +173,7 @@
   <!-- BEST BUY -->
   <div class="company-card">
     <div class="company-left">
+      <img src="logos/best-buy.svg" alt="Best Buy logo" class="company-logo">
       <div class="company-name">Best Buy</div>
       <div class="company-metric">
         <div class="company-metric-val">PLP & PDP</div>
@@ -219,5 +234,6 @@
   </div>
 
 </div>
+<script src="bg-aurora.js"></script>
 </body>
 </html>
