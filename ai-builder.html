@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Built with AI — Aditi Sharma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .cs-page{max-width:100%;margin:0 auto;padding:0 4rem 6rem}
+    .cs-nav{display:flex;justify-content:space-between;align-items:center;padding:1.75rem 0;border-bottom:0.5px solid var(--line);margin-bottom:4rem;position:sticky;top:0;background:rgba(255,255,255,0.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:10}
+    .cs-nav-logo{font-family:var(--font-display);font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;color:var(--black);text-decoration:none}
+    .cs-nav-links{display:flex;gap:2.5rem;list-style:none}
+    .cs-nav-links a{font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-600);text-decoration:none;font-weight:500;transition:color 0.25s}
+    .cs-nav-links a:hover,
+    .cs-nav-links a.active{background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600}
+    .cs-back{font-size:0.75rem;color:var(--gray-400);letter-spacing:0.06em;text-decoration:none;display:inline-block;margin-bottom:2rem;transition:color 0.2s}
+    .cs-back:hover{color:var(--black)}
+    .cs-hero{padding-bottom:3rem;border-bottom:0.5px solid var(--line);margin-bottom:3rem}
+    .cs-eyebrow{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray-400);margin-bottom:1rem}
+    .cs-title{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-0.03em;color:var(--black);line-height:1.05;margin-bottom:0.75rem}
+    .cs-summary{font-size:1.05rem;color:var(--gray-600);line-height:1.8;max-width:680px;margin-bottom:2.5rem}
+    .ai-stack{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
+    .ai-stack-label{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-400);margin-right:0.25rem}
+    .ai-stack-logo{height:32px;width:32px;object-fit:contain;border-radius:8px}
+    .ai-stack-badge{height:32px;width:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:0.55rem;font-weight:700;letter-spacing:0.02em;color:#fff}
+    .ai-stack-item{display:flex;flex-direction:column;align-items:center;gap:4px}
+    .ai-stack-item span{font-size:0.58rem;color:var(--gray-400);letter-spacing:0.04em;text-align:center}
+    .cs-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:0.5px solid var(--line);border-radius:14px;overflow:hidden;max-width:680px}
+    .cs-metric{background:var(--white);padding:1.25rem 1rem}
+    .cs-metric-val{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--black);letter-spacing:-0.02em;line-height:1;margin-bottom:4px}
+    .cs-metric-label{font-size:0.62rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.05em;line-height:1.4}
+    .cs-section{margin-bottom:3.5rem;padding-bottom:3.5rem;border-bottom:0.5px solid var(--line)}
+    .cs-section:last-of-type{border-bottom:none}
+    .cs-section-num{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;background:linear-gradient(90deg,#A855F7,#06B6D4,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;margin-bottom:0.75rem}
+    .cs-section-title{font-family:var(--font-display);font-size:1.4rem;font-weight:600;letter-spacing:-0.02em;color:var(--black);margin-bottom:1.25rem;line-height:1.2}
+    .cs-body{font-size:0.92rem;color:var(--gray-600);line-height:1.85;margin-bottom:1rem;max-width:700px}
+    .cs-bullets{list-style:none;display:flex;flex-direction:column;gap:0.75rem;margin-top:1rem;max-width:700px}
+    .cs-bullets li{font-size:0.88rem;color:var(--gray-600);line-height:1.75;padding-left:1.25rem;position:relative}
+    .cs-bullets li::before{content:'→';position:absolute;left:0;color:var(--gray-400)}
+    .cs-results{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem;max-width:760px}
+    .cs-result{background:var(--off-white);border:0.5px solid var(--gray-200);border-radius:14px;padding:1.25rem}
+    .cs-result-val{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--black);letter-spacing:-0.02em;line-height:1;margin-bottom:6px}
+    .cs-result-label{font-size:0.78rem;color:var(--gray-600);line-height:1.55}
+    .cs-footer{margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--line);display:flex;justify-content:space-between;font-size:0.7rem;color:var(--gray-400);flex-wrap:wrap;gap:0.5rem}
+    .budget-callout{background:linear-gradient(135deg,#0f0f1a,#1a1030);border:0.5px solid rgba(168,85,247,0.3);border-radius:14px;padding:1.5rem 2rem;max-width:700px;margin-top:1.5rem}
+    .budget-callout p{font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.75;margin:0}
+    .budget-callout strong{color:#e9d5ff}
+
+    @media (max-width: 960px) {
+      .cs-page{padding:0 2.5rem 5rem}
+      .cs-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width: 700px) {
+      .cs-page{padding:0 1.25rem 4rem;overflow-x:hidden}
+      .cs-nav{flex-wrap:wrap;gap:0.75rem;margin-bottom:2.5rem}
+      .cs-nav-links{gap:1rem;flex-wrap:wrap}
+      .cs-results{grid-template-columns:minmax(0,1fr)}
+      .cs-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+  </style>
+</head>
+<body>
+<div class="bg-aurora"></div>
+<div class="bg-aurora-cursor"></div>
+<div class="cs-page">
+  <nav class="cs-nav">
+    <a href="index.html" class="cs-nav-logo">Aditi Sharma</a>
+    <ul class="cs-nav-links">
+      <li><a href="index.html#work" class="active">Work</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="cs-hero">
+    <a href="index.html" class="cs-back">← Back to portfolio</a>
+    <p class="cs-eyebrow">AI Project · June 2025 · Built in ~1 Week</p>
+    <h1 class="cs-title">Built This Portfolio<br>With AI.</h1>
+    <p class="cs-summary">No developer. No template. No budget beyond $20/month for Claude Pro. I designed every section, directed every build decision, and shipped a live production site — entirely through AI-assisted development.</p>
+
+    <div class="ai-stack">
+      <span class="ai-stack-label">Stack</span>
+      <div class="ai-stack-item">
+        <img src="logos/claude.svg" alt="Claude" class="ai-stack-logo">
+        <span>Claude</span>
+      </div>
+      <div class="ai-stack-item">
+        <img src="logos/vscode.svg" alt="VS Code" class="ai-stack-logo">
+        <span>VS Code</span>
+      </div>
+      <div class="ai-stack-item">
+        <div class="ai-stack-badge" style="background:#0078d4">Co</div>
+        <span>Copilot</span>
+      </div>
+      <div class="ai-stack-item">
+        <img src="logos/github.svg" alt="GitHub" class="ai-stack-logo" style="background:#24292e;padding:4px;border-radius:8px">
+        <span>GitHub</span>
+      </div>
+      <div class="ai-stack-item">
+        <div class="ai-stack-badge" style="background:#412991">W</div>
+        <span>Whisper</span>
+      </div>
+    </div>
+
+    <div class="cs-metrics">
+      <div class="cs-metric"><div class="cs-metric-val">$20</div><div class="cs-metric-label">Total budget</div></div>
+      <div class="cs-metric"><div class="cs-metric-val">~1 wk</div><div class="cs-metric-label">Zero to live</div></div>
+      <div class="cs-metric"><div class="cs-metric-val">5</div><div class="cs-metric-label">Case study pages</div></div>
+      <div class="cs-metric"><div class="cs-metric-val">0</div><div class="cs-metric-label">Developers hired</div></div>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">Problem</p>
+    <h2 class="cs-section-title">A 2-page resume can't show who you are.</h2>
+    <p class="cs-body">After years of shipping real products — $5.3M revenue from zero at Zenni, experimentation across 5 brands at Williams-Sonoma, mobile checkout rebuilt from scratch at Rodan + Fields — a resume still couldn't communicate how I think, how I work, or what I've actually built. I needed a portfolio. And I wanted to build it myself.</p>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">Motivation</p>
+    <h2 class="cs-section-title">Three goals. One project.</h2>
+    <ul class="cs-bullets">
+      <li>Create a portfolio that tells the full story of my work — not just bullet points</li>
+      <li>Prove I can go 0→1 with AI — not just talk about it, actually ship something real with it</li>
+      <li>Learn the full technical loop: design → code → deploy → iterate — end to end, myself</li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">Approach</p>
+    <h2 class="cs-section-title">PM-directed AI development.</h2>
+    <p class="cs-body">I didn't write code — I directed it. Every design decision, layout choice, color system, and section structure came from my own creative vision. Claude translated those decisions into working HTML, CSS, and JavaScript. I reviewed, iterated, and made every call on what shipped.</p>
+    <ul class="cs-bullets">
+      <li>Designed every section from scratch — no templates, no UI kits, no inspiration boards</li>
+      <li>Used Whisper (OpenAI voice-to-text) to direct Claude entirely by voice — didn't type a single prompt</li>
+      <li>Iterated on mobile responsiveness, typography, and layout in real sessions — treating it like a real product sprint</li>
+      <li>Managed version control and deployment through GitHub Pages — commit, push, live</li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">Budget Strategy</p>
+    <h2 class="cs-section-title">$20 budget. Real constraints. Real solutions.</h2>
+    <p class="cs-body">Claude Pro has token limits per session. When I hit them mid-build, I didn't pause — I switched to VS Code Copilot and kept going. Two AI tools, zero downtime, one continuous project.</p>
+    <div class="budget-callout">
+      <p><strong>The constraint became the lesson:</strong> Managing a $20 budget across two AI tools to ship a production website is the same muscle as managing engineering capacity across two teams to ship a product. Prioritize, adapt, keep moving.</p>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">What I Learned</p>
+    <h2 class="cs-section-title">AI doesn't replace judgment. It amplifies it.</h2>
+    <ul class="cs-bullets">
+      <li>The quality of AI output is directly proportional to the clarity of your thinking — vague prompts produce vague results</li>
+      <li>PMs are actually well-positioned to direct AI development — we define requirements, review output, and make tradeoffs all day</li>
+      <li>Shipping a real product (even a personal one) requires the same discipline as shipping at work: mobile testing, edge cases, iterating on feedback</li>
+      <li>I can now build and launch a working website, tool, or prototype independently — that changes what I can do as a PM</li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-num">Results</p>
+    <h2 class="cs-section-title">Outcomes.</h2>
+    <div class="cs-results">
+      <div class="cs-result"><div class="cs-result-val">Live</div><div class="cs-result-label">Production portfolio at addytish.github.io — shipped and accessible from any device</div></div>
+      <div class="cs-result"><div class="cs-result-val">$20</div><div class="cs-result-label">Total spend. No agency, no freelancer, no template subscription</div></div>
+      <div class="cs-result"><div class="cs-result-val">~1 week</div><div class="cs-result-label">Zero to live — while interviewing full-time</div></div>
+      <div class="cs-result"><div class="cs-result-val">New skill</div><div class="cs-result-label">Can now independently build and ship web products using AI — a permanent capability, not a one-time project</div></div>
+    </div>
+  </div>
+
+  <div class="cs-footer">
+    <span>Aditi Sharma · Senior Product Manager · 2026</span>
+    <a href="index.html" style="color:var(--gray-400);text-decoration:none">← Back to portfolio</a>
+  </div>
+</div>
+<script src="bg-aurora.js"></script>
+</body>
+</html>
