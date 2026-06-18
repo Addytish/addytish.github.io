@@ -24,10 +24,11 @@
     .cs-summary{font-size:1.05rem;color:var(--gray-600);line-height:1.8;max-width:680px;margin-bottom:2.5rem}
     .ai-stack{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
     .ai-stack-label{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-400);margin-right:0.25rem}
-    .ai-stack-logo{height:32px;width:32px;object-fit:contain;border-radius:8px}
-    .ai-stack-badge{height:32px;width:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:0.55rem;font-weight:700;letter-spacing:0.02em;color:#fff}
-    .ai-stack-item{display:flex;flex-direction:column;align-items:center;gap:4px}
-    .ai-stack-item span{font-size:0.58rem;color:var(--gray-400);letter-spacing:0.04em;text-align:center}
+    .ai-stack-logo{height:48px;width:48px;object-fit:contain;border-radius:10px}
+    .ai-stack-logo--wordmark{height:28px;width:auto;max-width:130px;border-radius:0}
+    .ai-stack-badge{height:48px;width:48px;display:flex;align-items:center;justify-content:center;border-radius:10px;font-size:0.65rem;font-weight:700;letter-spacing:0.02em;color:#fff}
+    .ai-stack-item{display:flex;flex-direction:column;align-items:center;gap:6px}
+    .ai-stack-item span{font-size:0.62rem;color:var(--gray-400);letter-spacing:0.04em;text-align:center}
     .cs-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:0.5px solid var(--line);border-radius:14px;overflow:hidden;max-width:680px}
     .cs-metric{background:var(--white);padding:1.25rem 1rem}
     .cs-metric-val{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--black);letter-spacing:-0.02em;line-height:1;margin-bottom:4px}
@@ -80,7 +81,7 @@
     <a href="index.html" class="cs-back">← Back to portfolio</a>
     <p class="cs-eyebrow">AI Project · June 2025 · Built in ~1 Week</p>
     <h1 class="cs-title">Built This Portfolio<br>With AI.</h1>
-    <p class="cs-summary">No developer. No template. No budget beyond $20/month for Claude Pro. I designed every section, directed every build decision, and shipped a live production site — entirely through AI-assisted development.</p>
+    <p class="cs-summary">No developer. No template. No budget beyond $20/month for Claude Pro. I designed every section, directed every build decision, and shipped a live production site — using Claude to build, ChatGPT to refine copy, and Gemini for personalized research and ideation.</p>
 
     <div class="ai-stack">
       <span class="ai-stack-label">Stack</span>
@@ -89,20 +90,28 @@
         <span>Claude</span>
       </div>
       <div class="ai-stack-item">
+        <img src="logos/chatgpt.svg" alt="ChatGPT" class="ai-stack-logo">
+        <span>ChatGPT</span>
+      </div>
+      <div class="ai-stack-item">
+        <img src="logos/gemini.svg" alt="Gemini" class="ai-stack-logo">
+        <span>Gemini</span>
+      </div>
+      <div class="ai-stack-item">
         <img src="logos/vscode.svg" alt="VS Code" class="ai-stack-logo">
         <span>VS Code</span>
       </div>
       <div class="ai-stack-item">
-        <div class="ai-stack-badge" style="background:#0078d4">Co</div>
+        <img src="logos/copilot.svg" alt="GitHub Copilot" class="ai-stack-logo">
         <span>Copilot</span>
       </div>
       <div class="ai-stack-item">
-        <img src="logos/github.svg" alt="GitHub" class="ai-stack-logo" style="background:#24292e;padding:4px;border-radius:8px">
+        <img src="logos/github.svg" alt="GitHub" class="ai-stack-logo">
         <span>GitHub</span>
       </div>
       <div class="ai-stack-item">
-        <div class="ai-stack-badge" style="background:#412991">W</div>
-        <span>Whisper</span>
+        <img src="logos/wisprflow.svg" alt="WisprFlow" class="ai-stack-logo ai-stack-logo--wordmark">
+        <span>WisprFlow</span>
       </div>
     </div>
 
@@ -136,7 +145,9 @@
     <p class="cs-body">I didn't write code — I directed it. Every design decision, layout choice, color system, and section structure came from my own creative vision. Claude translated those decisions into working HTML, CSS, and JavaScript. I reviewed, iterated, and made every call on what shipped.</p>
     <ul class="cs-bullets">
       <li>Designed every section from scratch — no templates, no UI kits, no inspiration boards</li>
-      <li>Used Whisper (OpenAI voice-to-text) to direct Claude entirely by voice — didn't type a single prompt</li>
+      <li>Used WisprFlow (voice-to-text) to direct Claude entirely by voice — didn't type a single prompt</li>
+      <li>Used ChatGPT to refine case study copy and sharpen how each story was framed</li>
+      <li>Used Gemini for personalized ideation — because it has my Google context, it could give suggestions grounded in my actual background, not generic answers</li>
       <li>Iterated on mobile responsiveness, typography, and layout in real sessions — treating it like a real product sprint</li>
       <li>Managed version control and deployment through GitHub Pages — commit, push, live</li>
     </ul>
