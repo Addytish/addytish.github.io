@@ -165,7 +165,7 @@
         </article>
 
         <!-- EARLY CAREER -->
-        <article class="project-card">
+        <article class="project-card project-card--full">
           <div class="project-card__top">
             <div class="project-logo-row">
               <img src="logos/trane.svg" alt="Trane Technologies logo">
@@ -289,8 +289,41 @@
         <span class="section-label">Skills & tools · 2026</span>
       </div>
 
-      <!-- TOOLS -->
-      <div class="tools-grid">
+      <!-- TOOLS MARQUEE -->
+      <div class="tools-marquee-wrap">
+        <div class="tools-marquee">
+          <div class="tools-track">
+            <div class="tool-card"><img src="logos/figma.svg" class="tool-logo" alt="Figma"><span class="tool-name">Figma</span></div>
+            <div class="tool-card"><img src="logos/jira.svg" class="tool-logo" alt="Jira"></div>
+            <div class="tool-card"><img src="logos/confluence.svg" class="tool-logo" alt="Confluence"></div>
+            <div class="tool-card"><img src="logos/zapier.svg" class="tool-logo" alt="Zapier"></div>
+            <div class="tool-card"><img src="logos/adobe.svg" class="tool-logo" alt="Adobe Target"></div>
+            <div class="tool-card"><img src="logos/ga4.svg" class="tool-logo" alt="Google Analytics 4"></div>
+            <div class="tool-card"><img src="logos/salesforce.svg" class="tool-logo" alt="Salesforce"><span class="tool-name">Salesforce</span></div>
+            <div class="tool-card"><img src="logos/gtm.svg" class="tool-logo" alt="Google Tag Manager"><span class="tool-name">Google Tag Manager</span></div>
+            <div class="tool-card"><img src="logos/looker.svg" class="tool-logo" alt="Looker"><span class="tool-name">Looker</span></div>
+            <div class="tool-card"><img src="logos/sql.svg" class="tool-logo" alt="SQL"><span class="tool-name">SQL</span></div>
+            <div class="tool-card"><div class="tool-logo tool-initial" style="background:#016FE1;color:#fff">O</div><span class="tool-name">Optimizely</span></div>
+            <div class="tool-card"><div class="tool-logo tool-initial" style="background:#5C2D91;color:#fff">CS</div><span class="tool-name">Contentsquare</span></div>
+            <!-- duplicate for seamless loop -->
+            <div class="tool-card"><img src="logos/figma.svg" class="tool-logo" alt="Figma"><span class="tool-name">Figma</span></div>
+            <div class="tool-card"><img src="logos/jira.svg" class="tool-logo" alt="Jira"></div>
+            <div class="tool-card"><img src="logos/confluence.svg" class="tool-logo" alt="Confluence"></div>
+            <div class="tool-card"><img src="logos/zapier.svg" class="tool-logo" alt="Zapier"></div>
+            <div class="tool-card"><img src="logos/adobe.svg" class="tool-logo" alt="Adobe Target"></div>
+            <div class="tool-card"><img src="logos/ga4.svg" class="tool-logo" alt="Google Analytics 4"></div>
+            <div class="tool-card"><img src="logos/salesforce.svg" class="tool-logo" alt="Salesforce"><span class="tool-name">Salesforce</span></div>
+            <div class="tool-card"><img src="logos/gtm.svg" class="tool-logo" alt="Google Tag Manager"><span class="tool-name">Google Tag Manager</span></div>
+            <div class="tool-card"><img src="logos/looker.svg" class="tool-logo" alt="Looker"><span class="tool-name">Looker</span></div>
+            <div class="tool-card"><img src="logos/sql.svg" class="tool-logo" alt="SQL"><span class="tool-name">SQL</span></div>
+            <div class="tool-card"><div class="tool-logo tool-initial" style="background:#016FE1;color:#fff">O</div><span class="tool-name">Optimizely</span></div>
+            <div class="tool-card"><div class="tool-logo tool-initial" style="background:#5C2D91;color:#fff">CS</div><span class="tool-name">Contentsquare</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOOLS (hidden, kept for reference) -->
+      <div class="tools-grid" style="display:none">
         <div class="tool-card"><img src="logos/figma.svg" class="tool-logo" alt="Figma"><span class="tool-name">Figma</span></div>
         <div class="tool-card"><img src="logos/jira.svg" class="tool-logo" alt="Jira"></div>
         <div class="tool-card"><img src="logos/confluence.svg" class="tool-logo" alt="Confluence"></div>
@@ -386,11 +419,15 @@
         <h2 class="about-headline">Senior PM. Builder. Always curious.</h2>
         <p class="about-bio">I lead products across the full lifecycle — from strategy to shipping — and I genuinely love the craft of it. When I'm not running experimentation programs or building AI tools, I'm learning, connecting with people, and finding ways to make things better than I found them.</p>
         <p class="about-bio">Based in San Francisco. M.S. in Software Engineering. ACSM + CSPO certified. Open to the right senior PM or leadership opportunities.</p>
+        <p class="about-bio">Outside work: I DJ and curate music sets — obsessed with which songs transition into each other and reading the room. I snowboard, ride motorcycles, and generally gravitate toward anything that moves fast.</p>
         <div class="about-tags">
           <span class="about-tag">San Francisco</span>
           <span class="about-tag">M.S. Software Engineering</span>
           <span class="about-tag">ACSM · CSPO</span>
           <span class="about-tag">Building AI tools</span>
+          <span class="about-tag">🎧 DJ</span>
+          <span class="about-tag">🏂 Snowboard</span>
+          <span class="about-tag">🏍️ Motorcycles</span>
           <span class="about-tag">Open to opportunities</span>
         </div>
       </div>
@@ -461,6 +498,22 @@
       document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
     });
   });
+
+  // Card fly-in on scroll
+  const cards = document.querySelectorAll('.project-card');
+  cards.forEach((card, i) => {
+    card.classList.add('card-hidden');
+    card.style.transitionDelay = (i % 2 === 0 ? 0 : 0.1) + 's';
+  });
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('card-visible');
+        cardObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  cards.forEach(card => cardObserver.observe(card));
 
   // PM Operating System node graph
   const pmosNodes = document.querySelectorAll('.pmos-node');

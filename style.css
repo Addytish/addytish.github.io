@@ -526,6 +526,20 @@ ul { list-style: none; }
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
+.project-card--full {
+  grid-column: 1 / -1;
+}
+
+/* ── SCROLL FLY-IN ── */
+.card-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1);
+}
+.card-hidden.card-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ── PROJECT CARD ── */
 .project-card {
@@ -785,6 +799,29 @@ ul { list-style: none; }
 .skills-panel.active { display: block; }
 
 /* Tools grid */
+/* ── TOOLS MARQUEE ── */
+.tools-marquee-wrap {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  margin: 0 -1rem;
+}
+.tools-track {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+  padding: 0.5rem 1rem;
+}
+.tools-marquee-wrap:hover .tools-track {
+  animation-play-state: paused;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 .tools-grid {
   display: flex;
   flex-wrap: wrap;
