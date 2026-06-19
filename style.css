@@ -706,10 +706,10 @@ ul { list-style: none; }
   flex-wrap: wrap;
 }
 .ai-tool-logo {
-  height: 48px;
-  width: 48px;
+  height: 34px;
+  width: 34px;
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: 8px;
   flex-shrink: 0;
 }
 .ai-tool-initial {
@@ -719,16 +719,16 @@ ul { list-style: none; }
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 .ai-tool-logo--claude {
-  width: 60px;
-  height: 60px;
+  width: 42px;
+  height: 42px;
 }
 .ai-tool-logo--wordmark {
-  height: 28px;
+  height: 20px;
   width: auto;
-  max-width: 130px;
+  max-width: 90px;
   border-radius: 0;
 }
 
