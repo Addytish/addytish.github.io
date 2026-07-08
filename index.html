@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <div class="bg-aurora"></div>
@@ -372,6 +372,9 @@
             </div>
           </div>
 
+          <!-- Tap detail panel (mobile/tablet grid only) -->
+          <div class="pmos-mobile-detail" id="pmos-mobile-detail" hidden></div>
+
         </div>
 
         <!-- Testimonial bubbles -->
@@ -409,6 +412,16 @@
             <footer class="pmos-bubble-attr">Carri Norton, CEO</footer>
             <svg class="pmos-bubble-li" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn"><rect width="72" height="72" rx="8" fill="#0A66C2"/><path d="M14 29h10v29H14V29Zm5-16a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11ZM30 29h9.6v4.1h.1c1.3-2.4 4.4-4.9 9.1-4.9 9.7 0 11.5 6.4 11.5 14.7V58h-10V44.9c0-3.1-.1-7.1-4.4-7.1-4.4 0-5.1 3.4-5.1 6.9V58H30V29Z" fill="#fff"/></svg>
           </blockquote>
+        </div>
+
+        <!-- LinkedIn quotes crawler (shown where floating bubbles are hidden) -->
+        <div class="quotes-marquee-block">
+          <p class="quotes-marquee-label">What people say · LinkedIn</p>
+          <div class="quotes-marquee-wrap">
+            <div class="quotes-track" id="quotes-track">
+              <!-- populated from .pmos-bubble content by JS -->
+            </div>
+          </div>
         </div>
 
       </div>
@@ -718,7 +731,9 @@
   }, { threshold: 0.4 });
   if (pmosGraph) introObserver.observe(pmosGraph);
 
-  pmosNodes.forEach(node => {
+  const mobileDetail = document.getElementById('pmos-mobile-detail');
+
+  pmosNodes.forEach((node, idx) => {
     node.addEventListener('mouseenter', () => {
       userHovering = true;
       showNodeDetail(node);
@@ -730,9 +745,39 @@
     node.addEventListener('click', () => {
       const wasActive = node.classList.contains('active');
       pmosNodes.forEach(n => n.classList.remove('active'));
-      if (!wasActive) node.classList.add('active');
+      if (wasActive) {
+        if (mobileDetail) { mobileDetail.hidden = true; mobileDetail.innerHTML = ''; }
+        return;
+      }
+      node.classList.add('active');
+      if (mobileDetail) {
+        // place the panel directly after the tapped tile's row in the 2-col grid
+        pmosNodes.forEach((n, j) => { n.style.order = j * 2; });
+        const rowEnd = Math.floor(idx / 2) * 2 + 1;
+        mobileDetail.style.order = rowEnd * 2 + 1;
+        const num = node.querySelector('.pmos-node-num').textContent;
+        const title = node.querySelector('.pmos-node-title').textContent;
+        const items = [...node.querySelectorAll('.pmos-node-list li')]
+          .map(li => `<li>${li.textContent}</li>`).join('');
+        mobileDetail.innerHTML = `<span class="pmos-node-num">${num}</span><p class="pmos-mobile-detail-title">${title}</p><ul class="pmos-node-list">${items}</ul>`;
+        mobileDetail.hidden = false;
+      }
     });
   });
+
+  // Build the LinkedIn quotes crawler from the existing bubbles (x2 for seamless loop)
+  const quotesTrack = document.getElementById('quotes-track');
+  if (quotesTrack) {
+    const bubbles = document.querySelectorAll('.pmos-bubble');
+    for (let pass = 0; pass < 2; pass++) {
+      bubbles.forEach(b => {
+        const card = document.createElement('blockquote');
+        card.className = 'quote-card';
+        card.innerHTML = b.innerHTML;
+        quotesTrack.appendChild(card);
+      });
+    }
+  }
 </script>
 </body>
 </html>
