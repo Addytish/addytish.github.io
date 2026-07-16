@@ -1,2 +1,5 @@
 .DS_Store
 
+
+# Chat backend data — must never be public (contains resume content, used only by the private Cloudflare Worker)
+chat-knowledge-base.md

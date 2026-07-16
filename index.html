@@ -7,7 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="chat-widget.css">
 </head>
 <body>
 <div class="bg-aurora"></div>
@@ -63,6 +64,32 @@
 
       <div class="project-grid">
 
+        <!-- CURRENT ROLE -->
+        <article class="project-card project-card--full project-card--current">
+          <div class="project-card__top">
+            <div class="current-badge">
+              <span class="current-badge-dot"></span>
+              Currently cooking
+            </div>
+            <img src="logos/squaretrade.svg" alt="SquareTrade, an Allstate company logo" class="project-logo">
+            <span class="project-tag">Senior Product Manager · Full-time · Since Apr 2026</span>
+            <h2 class="project-title">What I'm Building Now</h2>
+            <p class="project-desc">New job, new badge, still haven't picked a Slack emoji. I joined SquareTrade (an Allstate company) in April 2026 as a Senior Product Manager — this one's real, current, and very much in progress. The case study isn't ready yet because, honestly, I only just started. Check back soon for actual details, screenshots, and probably some strong new opinions about claims workflows.</p>
+          </div>
+          <div class="project-card__bottom">
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-val">Day 1</span>
+                <span class="metric-label">of figuring it all out</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">TBD</span>
+                <span class="metric-label">Case study — coming soon</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
         <!-- AI BUILDER -->
         <article class="project-card">
           <div class="project-card__top">
@@ -100,7 +127,7 @@
           <div class="project-card__top">
             <img src="logos/williams-sonoma.svg" alt="Williams-Sonoma logo" class="project-logo">
             <span class="project-tag">Experimentation · Personalization · AI</span>
-            <p class="project-desc">At Williams-Sonoma, I lead experimentation and personalization initiatives across multiple retail brands, helping teams make better decisions through customer insights and data. My work spans large-scale testing programs, AI-powered recommendations, and executive stakeholder alignment, translating customer behavior into measurable business results across millions of shopping journeys.</p>
+            <p class="project-desc">At Williams-Sonoma, I led experimentation and personalization initiatives across multiple retail brands, helping teams make better decisions through customer insights and data. My work spanned large-scale testing programs, AI-powered recommendations, and executive stakeholder alignment, translating customer behavior into measurable business results across millions of shopping journeys.</p>
             <a href="williams-sonoma.html" class="project-link">Read case study →</a>
           </div>
           <div class="project-card__bottom">
@@ -779,5 +806,6 @@
     }
   }
 </script>
+<script src="chat-widget.js" defer></script>
 </body>
 </html>
